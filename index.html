@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interfață demonstrativă pentru rezervarea unei mașini.">
+  <title>Rezervare auto</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header" aria-label="Antet demonstrativ">
+    <a class="brand-placeholder" href="index.html" aria-label="Elita Auto Rent — Acasă"><img class="brand-logo" src="assets/brand/elita-auto-rent-logo.jpg" alt="Elita Auto Rent"></a>
+    <nav class="desktop-nav" aria-label="Navigație principală">
+      <a href="index.html#booking-title">Închirieri auto</a>
+      <a href="index.html#fleet">Flota noastră</a>
+      <a href="about.html">Despre noi</a>
+      <a href="terms.html">Termeni și condiții</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button id="mobile-nav-toggle" class="mobile-nav-toggle" type="button" aria-label="Deschide meniul" aria-expanded="false" aria-controls="mobile-nav-panel">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <a class="account-link" href="#">Rezervarea mea</a>
+      <button id="open-login" class="header-icon-link" type="button" aria-label="Autentificare în cont">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 21v-2a5 5 0 0 0-5-5H9a5 5 0 0 0-5 5v2M12 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/></svg>
+      </button>
+      <div class="language-switcher">
+        <button id="language-button" class="language-button" type="button" aria-label="Selectează limba" aria-expanded="false" aria-controls="language-menu">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+          <span id="current-language-label">Română</span>
+          <svg class="language-chevron" aria-hidden="true" viewBox="0 0 24 24"><path d="m7 9.5 5 5 5-5"/></svg>
+        </button>
+        <div id="language-menu" class="language-menu" hidden>
+          <button type="button" data-language="ro" aria-current="true">Română <small>RO</small></button>
+          <button type="button" data-language="ru">Русский <small>RU</small></button>
+          <button type="button" data-language="en">English <small>EN</small></button>
+        </div>
+      </div>
+    </div>
+    <nav id="mobile-nav-panel" class="mobile-nav-panel" aria-label="Navigație mobilă" hidden>
+      <a href="index.html#booking-title">Închirieri auto</a>
+      <a href="index.html#fleet">Flota noastră</a>
+      <a href="about.html">Despre noi</a>
+      <a href="terms.html">Termeni și condiții</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="rental-mega-menu" class="mega-menu" aria-label="Meniu închirieri auto" hidden>
+    <div class="mega-menu-inner">
+      <aside class="mega-sidebar">
+        <nav aria-label="Categorii închirieri">
+          <a class="mega-active" href="#fleet-grid">Flota noastră</a>
+          <a href="#booking-title">Rezervare</a>
+          <a href="#tarife">Tarife pe zi</a>
+          <a href="#contact">Contact</a>
+          <a href="#footer-info">Informații</a>
+        </nav>
+        <div class="mega-secondary">
+          <a href="#footer-info">Condiții de închiriere</a>
+          <a href="#contact">Ajutor</a>
+        </div>
+        <div class="help-phone">
+          <span class="help-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 3 5 5c-1 1 0 5 4 9s8 5 9 4l2-3-4-2-2 2c-2-1-4-3-5-5l2-2-3-5Z"/></svg>
+          </span>
+          <span><small>Republica Moldova</small><strong>Nisporeni</strong></span>
+        </div>
+      </aside>
+
+      <div id="fleet-grid" class="fleet-grid">
+        <a class="fleet-link" href="#">Flota noastră</a>
+        <article class="vehicle-card">
+          <svg class="vehicle-art car-orange" aria-hidden="true" viewBox="0 0 300 120"><path class="car-body" d="M25 77h13l17-35c5-10 16-16 28-16h91c12 0 23 5 31 14l30 34 25 7v17H25Z"/><path class="car-window" d="m71 43-14 30h62V39H85c-6 0-11 1-14 4Zm61-4v34h77l-24-27c-4-5-10-7-17-7Z"/><circle cx="78" cy="94" r="18"/><circle cx="219" cy="94" r="18"/><circle class="hub" cx="78" cy="94" r="8"/><circle class="hub" cx="219" cy="94" r="8"/></svg>
+          <h3>Mic</h3>
+        </article>
+        <article class="vehicle-card">
+          <svg class="vehicle-art car-silver" aria-hidden="true" viewBox="0 0 300 120"><path class="car-body" d="M18 79h20l20-37c5-9 15-15 26-15h100c11 0 21 5 29 13l31 34 33 8v16H18Z"/><path class="car-window" d="m75 43-15 30h62V39H87c-5 0-9 1-12 4Zm60-4v34h83l-25-28c-4-4-10-6-16-6Z"/><circle cx="76" cy="94" r="18"/><circle cx="224" cy="94" r="18"/><circle class="hub" cx="76" cy="94" r="8"/><circle class="hub" cx="224" cy="94" r="8"/></svg>
+          <h3>Mediu</h3>
+        </article>
+        <article class="vehicle-card">
+          <svg class="vehicle-art car-gray" aria-hidden="true" viewBox="0 0 300 120"><path class="car-body" d="M15 77h23l18-39c4-9 14-15 25-15h112c12 0 23 5 30 15l25 34 39 10v16H15Z"/><path class="car-window" d="m73 40-14 32h65V35H84c-5 0-9 2-11 5Zm64-5v37h86l-20-28c-4-6-10-9-18-9Z"/><circle cx="74" cy="94" r="18"/><circle cx="228" cy="94" r="18"/><circle class="hub" cx="74" cy="94" r="8"/><circle class="hub" cx="228" cy="94" r="8"/></svg>
+          <h3>Mare</h3>
+        </article>
+        <article class="vehicle-card">
+          <svg class="vehicle-art car-blue" aria-hidden="true" viewBox="0 0 300 120"><path class="car-body" d="M14 77h22l19-42c4-9 14-14 25-14h112c10 0 19 4 25 12l29 37 35 11v17H14Z"/><path class="car-window" d="m72 38-14 34h70V33H84c-6 0-10 2-12 5Zm69-5v39h87l-22-29c-4-6-11-10-19-10Z"/><circle cx="75" cy="94" r="19"/><circle cx="231" cy="94" r="19"/><circle class="hub" cx="75" cy="94" r="8"/><circle class="hub" cx="231" cy="94" r="8"/></svg>
+          <h3>SUV</h3>
+        </article>
+        <article class="vehicle-card">
+          <svg class="vehicle-art car-black" aria-hidden="true" viewBox="0 0 300 120"><path class="car-body" d="M15 40h182c13 0 23 7 29 19l9 17 38 8v14H15Z"/><path class="car-window" d="M51 50h72v27H51Zm84 0h56c9 0 16 5 20 13l6 14h-82Z"/><circle cx="72" cy="95" r="18"/><circle cx="231" cy="95" r="18"/><circle class="hub" cx="72" cy="95" r="8"/><circle class="hub" cx="231" cy="95" r="8"/></svg>
+          <h3>Transport persoane</h3>
+        </article>
+        <article class="vehicle-card">
+          <svg class="vehicle-art car-white" aria-hidden="true" viewBox="0 0 300 120"><path class="car-body" d="M17 29h145c16 0 27 8 35 21l15 26 54 7v15H17Z"/><path class="car-window" d="M47 43h61v31H47Zm74 0h39c11 0 19 5 25 15l9 16h-73Z"/><circle cx="68" cy="95" r="18"/><circle cx="226" cy="95" r="18"/><circle class="hub" cx="68" cy="95" r="8"/><circle class="hub" cx="226" cy="95" r="8"/></svg>
+          <h3>Utilitare</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="booking-section" aria-labelledby="booking-title">
+      <div class="booking-shell">
+        <h1 id="booking-title" class="sr-only">Caută o mașină de închiriat</h1>
+
+        <div class="different-location-row">
+          <span id="different-location-label">Voi livra în altă locație</span>
+          <button
+            class="switch"
+            id="different-location"
+            type="button"
+            role="switch"
+            aria-checked="false"
+            aria-labelledby="different-location-label"
+          ><span class="switch-knob"></span></button>
+        </div>
+
+        <form id="booking-form" class="booking-form" novalidate>
+          <div class="location-stack">
+            <div class="field-card location-card">
+              <label for="pickup-location">
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s7-5.5 7-13A7 7 0 1 0 5 9c0 7.5 7 13 7 13Zm0-10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>
+                De unde vei ridica?
+              </label>
+              <input id="pickup-location" name="pickupLocation" type="text" autocomplete="off" value="Nisporeni, Republica Moldova" placeholder="Nisporeni, Republica Moldova" aria-describedby="pickup-error" readonly required>
+              <button class="field-chevron" type="button" aria-label="Arată locațiile disponibile" data-open-locations>
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m7 9.5 5 5 5-5"/></svg>
+              </button>
+              <div class="network-badge" aria-hidden="true">
+                <span>Nisporeni</span>
+                <svg viewBox="0 0 24 24"><path d="M12 22s7-5.5 7-13A7 7 0 1 0 5 9c0 7.5 7 13 7 13Zm0-10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>
+              </div>
+              <ul id="location-suggestions" class="suggestions" role="listbox" aria-label="Locații sugerate" hidden></ul>
+              <p id="pickup-error" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div id="dropoff-wrap" class="field-card location-card dropoff-card" hidden>
+              <label for="dropoff-location">
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s7-5.5 7-13A7 7 0 1 0 5 9c0 7.5 7 13 7 13Zm0-10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>
+                Unde vei livra?
+              </label>
+              <input id="dropoff-location" name="dropoffLocation" type="text" autocomplete="off" placeholder="Introdu locația de predare ...">
+            </div>
+          </div>
+
+          <div class="field-card date-card pickup-date-card">
+            <label for="pickup-date">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 2v3M17 2v3M3 9h18M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2Z"/></svg>
+              Când vei primi?
+            </label>
+            <div class="date-time-row">
+              <input id="pickup-date" name="pickupDate" type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" autocomplete="off" required aria-label="Data ridicării în format zi/lună/an" data-date-input="pickup">
+              <select id="pickup-time" name="pickupTime" aria-label="Ora ridicării"></select>
+            </div>
+            <p id="pickup-date-error" class="field-error" aria-live="polite"></p>
+          </div>
+
+          <div class="field-card date-card dropoff-date-card">
+            <label for="dropoff-date">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 2v3M17 2v3M3 9h18M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2Z"/></svg>
+              Când vei livra?
+            </label>
+            <div class="date-time-row">
+              <input id="dropoff-date" name="dropoffDate" type="text" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" autocomplete="off" required aria-label="Data predării în format zi/lună/an" data-date-input="dropoff">
+              <select id="dropoff-time" name="dropoffTime" aria-label="Ora predării"></select>
+            </div>
+            <p id="dropoff-date-error" class="field-error" aria-live="polite"></p>
+          </div>
+
+          <button class="search-button" type="submit">
+            <span>Găsesc o mașină</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+
+          <div class="promo-wrap" hidden>
+            <label class="promo-toggle" for="promo-enabled">
+              <input id="promo-enabled" type="checkbox">
+              <span class="custom-checkbox" aria-hidden="true"></span>
+              <span>Aveți un cod promoțional?</span>
+              <span class="info-dot" aria-label="Codul este opțional">i</span>
+            </label>
+            <div id="promo-field" class="promo-field" hidden>
+              <label class="sr-only" for="promo-code">Cod promoțional</label>
+              <input id="promo-code" name="promoCode" type="text" maxlength="24" placeholder="Introdu codul">
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="fleet" class="rental-fleet-section" aria-labelledby="fleet-title">
+      <div class="rental-fleet-shell">
+        <div class="fleet-heading">
+          <div>
+            <span class="section-eyebrow">Închirieri auto în Nisporeni</span>
+            <h2 id="fleet-title">Mașinile noastre</h2>
+          </div>
+          <p>O flotă restrânsă și atent întreținută, disponibilă pentru o zi, mai multe zile sau, la cerere, pentru o lună.</p>
+        </div>
+
+        <button id="mobile-filter-toggle" class="mobile-filter-toggle" type="button" aria-expanded="false" aria-controls="fleet-filters">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+          Filtrează mașinile
+          <span id="mobile-filter-count">0</span>
+        </button>
+
+        <div class="fleet-catalog-layout">
+          <aside id="fleet-filters" class="fleet-filter-sidebar" aria-label="Filtre flotă">
+            <div class="fleet-filter-header"><h3>Filtre</h3><button id="reset-filters" type="button">Resetează</button></div>
+
+            <details open>
+              <summary>Preț pe zi</summary>
+              <div class="fleet-filter-content">
+                <div class="fleet-price-labels"><span id="fleet-min-label">500 MDL</span><span id="fleet-max-label">900 MDL</span></div>
+                <div class="fleet-range-wrap">
+                  <div class="fleet-range-track"></div>
+                  <input id="fleet-price-min" type="range" min="500" max="900" step="50" value="500" aria-label="Preț minim pe zi">
+                  <input id="fleet-price-max" type="range" min="500" max="900" step="50" value="900" aria-label="Preț maxim pe zi">
+                </div>
+              </div>
+            </details>
+
+            <details open>
+              <summary>Marcă de mașină</summary>
+              <div class="fleet-filter-content fleet-check-list">
+                <label><input type="checkbox" data-fleet-filter="brand" value="Dacia"><span class="fleet-checkbox"></span><span>Dacia</span><small>4</small></label>
+                <label><input type="checkbox" data-fleet-filter="brand" value="Renault"><span class="fleet-checkbox"></span><span>Renault</span><small>1</small></label>
+                <label><input type="checkbox" data-fleet-filter="brand" value="Toyota"><span class="fleet-checkbox"></span><span>Toyota</span><small>1</small></label>
+                <label><input type="checkbox" data-fleet-filter="brand" value="Volkswagen"><span class="fleet-checkbox"></span><span>Volkswagen</span><small>2</small></label>
+              </div>
+            </details>
+
+            <details open>
+              <summary>Cutie de viteze</summary>
+              <div class="fleet-filter-content fleet-check-list">
+                <label><input type="checkbox" data-fleet-filter="transmission" value="manual"><span class="fleet-checkbox"></span><span>Manuală</span><small>4</small></label>
+                <label><input type="checkbox" data-fleet-filter="transmission" value="automatic"><span class="fleet-checkbox"></span><span>Automată</span><small>4</small></label>
+              </div>
+            </details>
+
+            <details open>
+              <summary>Tip carburant</summary>
+              <div class="fleet-filter-content fleet-check-list">
+                <label><input type="checkbox" data-fleet-filter="fuel" value="diesel"><span class="fleet-checkbox"></span><span>Diesel</span><small>4</small></label>
+                <label><input type="checkbox" data-fleet-filter="fuel" value="petrol"><span class="fleet-checkbox"></span><span>Benzină</span><small>3</small></label>
+                <label><input type="checkbox" data-fleet-filter="fuel" value="hybrid"><span class="fleet-checkbox"></span><span>Hibrid</span><small>1</small></label>
+              </div>
+            </details>
+
+            <details>
+              <summary>Categorie</summary>
+              <div class="fleet-filter-content fleet-check-list">
+                <label><input type="checkbox" data-fleet-filter="category" value="economic"><span class="fleet-checkbox"></span><span>Economic</span><small>1</small></label>
+                <label><input type="checkbox" data-fleet-filter="category" value="estate"><span class="fleet-checkbox"></span><span>Break</span><small>3</small></label>
+                <label><input type="checkbox" data-fleet-filter="category" value="sedan"><span class="fleet-checkbox"></span><span>Sedan</span><small>2</small></label>
+                <label><input type="checkbox" data-fleet-filter="category" value="suv"><span class="fleet-checkbox"></span><span>SUV</span><small>2</small></label>
+              </div>
+            </details>
+          </aside>
+
+          <div class="fleet-results">
+            <div class="fleet-results-bar">
+              <strong id="fleet-results-count">8 mașini</strong>
+              <label><span>Sortare</span><select id="fleet-sort"><option value="recommended">Recomandate</option><option value="price-asc">Preț crescător</option><option value="price-desc">Preț descrescător</option></select></label>
+            </div>
+
+            <div id="tarife" class="rental-car-grid"></div>
+            <div id="fleet-empty" class="fleet-empty" hidden>Nu există mașini pentru filtrele selectate.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section id="contact" class="contact-section" aria-labelledby="contact-title">
+    <header class="contact-hero">
+      <h2 id="contact-title">Contacte</h2>
+      <div class="contact-breadcrumb"><a href="#">Principală</a><span>/</span><strong>Contacte</strong></div>
+    </header>
+    <div class="contact-body">
+      <div class="contact-card-grid">
+        <article class="contact-card">
+          <div class="contact-icon contact-whatsapp-icon">
+            <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16.05 4.5A11.42 11.42 0 0 0 6.2 21.7L4.5 27.5l5.95-1.62A11.5 11.5 0 1 0 16.05 4.5Zm0 20.87c-1.8 0-3.56-.5-5.08-1.45l-.36-.22-3.53.96.95-3.43-.24-.37a9.3 9.3 0 1 1 8.26 4.51Zm5.1-6.96c-.28-.14-1.65-.81-1.9-.9-.26-.1-.45-.14-.64.14-.19.28-.73.9-.9 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39a8.43 8.43 0 0 1-1.56-1.94c-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.5-.07-.14-.64-1.54-.87-2.1-.23-.56-.47-.48-.64-.49h-.54c-.19 0-.5.07-.76.35-.26.28-1 1-1 2.43 0 1.43 1.04 2.81 1.18 3 .14.19 2.04 3.12 4.95 4.38.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.65-.68 1.88-1.33.23-.65.23-1.21.16-1.33-.07-.12-.26-.19-.54-.33Z"/></svg>
+          </div>
+          <h3>Telefon și WhatsApp</h3>
+          <p>Numărul de contact va fi configurat înainte de publicare.</p>
+          <button class="contact-whatsapp-button" type="button">Scrie pe WhatsApp</button>
+        </article>
+        <article class="contact-card">
+          <div class="contact-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 5h18v14H3Z"/><path d="m3 6 9 7 9-7"/></svg></div>
+          <h3>E-mail</h3>
+          <p>Adresa de e-mail va fi adăugată înainte de publicare.</p>
+        </article>
+        <article class="contact-card">
+          <div class="contact-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s7-5.5 7-13A7 7 0 1 0 5 9c0 7.5 7 13 7 13Z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+          <h3>Adresa noastră</h3>
+          <p>Nisporeni<br>Republica Moldova</p>
+        </article>
+        <article class="contact-card">
+          <div class="contact-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg></div>
+          <h3>Program de lucru</h3>
+          <p>Rezervări online 24/7<br>Ridicarea se stabilește în prealabil.</p>
+        </article>
+      </div>
+
+      <form id="contact-form" class="contact-form-panel" novalidate>
+        <div class="contact-form-heading">
+          <span>Contactează-ne</span>
+          <h2>Ai întrebări? Scrie-ne acum.</h2>
+          <p>Mesajul este pregătit și deschis direct în WhatsApp.</p>
+        </div>
+        <div class="contact-form-fields">
+          <label>Nume și prenume<input id="contact-name" type="text" autocomplete="name" required></label>
+          <label>Telefon sau e-mail<input id="contact-reply" type="text" autocomplete="tel" required></label>
+          <label class="contact-message">Mesaj<textarea id="contact-message" rows="5" required></textarea></label>
+          <button type="submit">Trimite prin WhatsApp</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer id="site-footer" class="site-footer">
+    <div class="site-footer-shell">
+      <section class="footer-intro">
+        <a class="footer-brand" href="index.html" aria-label="Elita Auto Rent — Acasă"><img class="footer-logo" src="assets/brand/elita-auto-rent-logo.jpg" alt="Elita Auto Rent"></a>
+        <div>
+          <h2>Închirieri auto în Nisporeni</h2>
+          <p>Rezervări flexibile pentru o zi, un weekend, mai multe zile sau perioade lunare, în funcție de disponibilitatea mașinilor.</p>
+        </div>
+      </section>
+      <div id="footer-info" class="footer-columns">
+        <div><h3>Rezervare</h3><a href="index.html#booking-title">Caută o mașină</a><a href="index.html#fleet">Flota noastră</a></div>
+        <div><h3>Informații</h3><a href="about.html">Despre noi</a><a href="terms.html">Termeni și condiții</a><a href="#">Politica de confidențialitate</a><a href="#">Întrebări frecvente</a></div>
+        <div><h3>Locație</h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Nisporeni%2C%20Republica%20Moldova" target="_blank" rel="noopener noreferrer">Nisporeni</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Nisporeni%2C%20Republica%20Moldova" target="_blank" rel="noopener noreferrer">Republica Moldova</a><p>Predarea și ridicarea se confirmă la rezervare.</p></div>
+        <div><h3>Contact</h3><p>Rezervările sunt pregătite direct în WhatsApp.</p><a href="#booking-title">Trimite o rezervare</a></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Închirieri auto Nisporeni</span><span>Prețurile și disponibilitatea se confirmă înainte de rezervare.</span></div>
+    </div>
+  </footer>
+
+  <svg class="svg-defs" aria-hidden="true">
+    <symbol id="rental-car-symbol" viewBox="0 0 320 150">
+      <path class="rental-car-body" d="M19 96h19l22-47c5-11 17-18 30-18h104c13 0 25 6 33 16l34 42 40 10v20H19Z"/>
+      <path class="rental-car-window" d="m78 50-18 38h72V43H94c-7 0-12 2-16 7Zm69-7v45h99l-29-35c-6-7-14-10-24-10Z"/>
+      <path class="rental-car-detail" d="M26 98h270M147 45v45M69 69h-14M257 82h18"/>
+      <circle class="rental-wheel" cx="82" cy="115" r="23"/><circle class="rental-wheel" cx="247" cy="115" r="23"/>
+      <circle class="rental-hub" cx="82" cy="115" r="10"/><circle class="rental-hub" cx="247" cy="115" r="10"/>
+    </symbol>
+  </svg>
+
+  <section id="calendar-popover" class="calendar-popover" aria-label="Selectează data și ora" hidden>
+    <div class="calendar-months">
+      <button id="calendar-prev" class="calendar-arrow" type="button" aria-label="Luna anterioară">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <div id="calendar-first" class="calendar-month"></div>
+      <div id="calendar-second" class="calendar-month"></div>
+      <button id="calendar-next" class="calendar-arrow" type="button" aria-label="Luna următoare">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+    <div class="calendar-footer">
+      <div class="time-picker">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg>
+        <strong id="calendar-time-label">La ce oră vei ridica?</strong>
+        <select id="calendar-hour" aria-label="Ora"></select>
+        <span>:</span>
+        <select id="calendar-minute" aria-label="Minute"></select>
+      </div>
+      <div class="calendar-actions">
+        <button id="calendar-cancel" class="secondary-button" type="button">Anulare</button>
+        <button id="calendar-confirm" class="confirm-button" type="button" disabled>OK</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="validation-dialog" class="modal-layer" hidden>
+    <section class="validation-dialog" role="dialog" aria-modal="true" aria-labelledby="validation-title">
+      <button id="validation-close" class="modal-close" type="button" aria-label="Închide">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></svg>
+      </button>
+      <div class="validation-title-row">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5M12 17.5v.2"/></svg>
+        <h2 id="validation-title">Vă rugăm să rețineți</h2>
+      </div>
+      <ul id="validation-errors"></ul>
+    </section>
+  </div>
+
+  <div id="auth-layer" class="modal-layer auth-layer" hidden>
+    <section id="login-dialog" class="auth-dialog login-dialog" role="dialog" aria-modal="true" aria-labelledby="login-title">
+      <button class="modal-close auth-close" type="button" aria-label="Închide autentificarea">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></svg>
+      </button>
+      <h2 id="login-title" class="sr-only">Autentificare</h2>
+      <form id="login-form" class="auth-form" novalidate>
+        <div class="auth-field">
+          <label for="login-email">E-mail</label>
+          <input id="login-email" name="email" type="email" autocomplete="email" required>
+          <span class="auth-error" aria-live="polite"></span>
+        </div>
+        <div class="auth-field">
+          <label for="login-password">Parola</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" minlength="8" required>
+          <span class="auth-error" aria-live="polite"></span>
+        </div>
+        <a class="forgot-link" href="#">Ați uitat parola?</a>
+        <button class="auth-submit" type="submit">LOGARE</button>
+        <button id="show-register" class="auth-switch" type="button">Înscrieți-vă aici</button>
+      </form>
+    </section>
+
+    <section id="register-dialog" class="auth-dialog register-dialog" role="dialog" aria-modal="true" aria-labelledby="register-title" hidden>
+      <button class="modal-close auth-close" type="button" aria-label="Închide înregistrarea">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></svg>
+      </button>
+      <h2 id="register-title" class="sr-only">Înregistrare cont nou</h2>
+      <form id="register-form" class="auth-form register-form" novalidate>
+        <div class="auth-field">
+          <label for="register-first-name">Nume</label>
+          <input id="register-first-name" name="firstName" type="text" autocomplete="given-name" required>
+          <span class="auth-error" aria-live="polite"></span>
+        </div>
+        <div class="auth-field">
+          <label for="register-last-name">Nume de familie</label>
+          <input id="register-last-name" name="lastName" type="text" autocomplete="family-name" required>
+          <span class="auth-error" aria-live="polite"></span>
+        </div>
+        <div class="auth-field">
+          <label for="register-email">E-mail</label>
+          <input id="register-email" name="email" type="email" autocomplete="email" required>
+          <span class="auth-error" aria-live="polite"></span>
+        </div>
+        <div class="auth-field password-field">
+          <label for="register-password">Parola</label>
+          <input id="register-password" name="password" type="password" autocomplete="new-password" minlength="8" required>
+          <button id="toggle-register-password" class="password-toggle" type="button" aria-label="Arată parola" aria-pressed="false">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+          <span class="auth-error" aria-live="polite"></span>
+        </div>
+        <label class="privacy-consent" for="privacy-consent">
+          <input id="privacy-consent" name="privacyConsent" type="checkbox" required>
+          <span class="custom-checkbox" aria-hidden="true"></span>
+          <span>Sunt de acord cu <a href="#">Politica de confidențialitate</a>.</span>
+        </label>
+
+        <!-- Punct rezervat integrării CAPTCHA. Furnizorul și cheile vor fi adăugate ulterior. -->
+        <div id="captcha-slot" class="captcha-slot" aria-hidden="true"></div>
+
+        <button class="auth-submit register-submit" type="submit">DEVENIȚI MEMBRU</button>
+        <p class="member-login">Sunteți deja un membru? <button id="show-login" type="button">Autentificare</button></p>
+      </form>
+    </section>
+  </div>
+
+  <button id="floating-whatsapp" class="floating-safety floating-whatsapp" type="button" aria-label="Deschide WhatsApp">
+    <svg aria-hidden="true" viewBox="0 0 32 32">
+      <path d="M16.05 4.5A11.42 11.42 0 0 0 6.2 21.7L4.5 27.5l5.95-1.62A11.5 11.5 0 1 0 16.05 4.5Zm0 20.87c-1.8 0-3.56-.5-5.08-1.45l-.36-.22-3.53.96.95-3.43-.24-.37a9.3 9.3 0 1 1 8.26 4.51Zm5.1-6.96c-.28-.14-1.65-.81-1.9-.9-.26-.1-.45-.14-.64.14-.19.28-.73.9-.9 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39a8.43 8.43 0 0 1-1.56-1.94c-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.5-.07-.14-.64-1.54-.87-2.1-.23-.56-.47-.48-.64-.49h-.54c-.19 0-.5.07-.76.35-.26.28-1 1-1 2.43 0 1.43 1.04 2.81 1.18 3 .14.19 2.04 3.12 4.95 4.38.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.65-.68 1.88-1.33.23-.65.23-1.21.16-1.33-.07-.12-.26-.19-.54-.33Z"/>
+    </svg>
+  </button>
+
+  <button id="scroll-to-top" class="scroll-to-top" type="button" aria-label="Înapoi la începutul paginii">
+    <svg aria-hidden="true" viewBox="0 0 64 64">
+      <circle class="scroll-track" cx="32" cy="32" r="26"/>
+      <circle class="scroll-progress" cx="32" cy="32" r="26"/>
+      <path class="scroll-arrow" d="M32 43V22M23.5 30.5 32 22l8.5 8.5"/>
+    </svg>
+  </button>
+
+  <div id="result-toast" class="result-toast" role="status" aria-live="polite" hidden>
+    <div>
+      <strong>Căutarea este pregătită</strong>
+      <p id="result-summary"></p>
+    </div>
+    <button id="close-toast" type="button" aria-label="Închide mesajul">×</button>
+  </div>
+
+  <div id="image-lightbox" class="image-lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" hidden>
+    <section class="lightbox-shell">
+      <header class="lightbox-header">
+        <div class="lightbox-heading">
+          <strong id="lightbox-title"></strong>
+          <span id="lightbox-counter"></span>
+        </div>
+        <div class="lightbox-tools">
+          <button id="lightbox-zoom-out" type="button" aria-label="Micșorează fotografia">−</button>
+          <output id="lightbox-zoom-label" aria-live="polite">100%</output>
+          <button id="lightbox-zoom-in" type="button" aria-label="Mărește fotografia">+</button>
+          <button id="lightbox-actual" class="lightbox-text-tool" type="button" aria-label="Dimensiune originală">1:1</button>
+          <button id="lightbox-fit" class="lightbox-fit-tool" type="button" aria-label="Încadrează pe ecran">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg>
+          </button>
+          <button id="lightbox-close" class="lightbox-close" type="button" aria-label="Închide vizualizatorul">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="lightbox-stage">
+        <button id="lightbox-prev" class="lightbox-navigation lightbox-navigation-prev" type="button" aria-label="Fotografia anterioară">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <div id="lightbox-scroll" class="lightbox-scroll">
+          <div id="lightbox-image-frame" class="lightbox-image-frame">
+            <img id="lightbox-image" class="lightbox-image" src="" alt="" draggable="false">
+          </div>
+        </div>
+        <button id="lightbox-next" class="lightbox-navigation lightbox-navigation-next" type="button" aria-label="Fotografia următoare">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+
+      <div id="lightbox-thumbnails" class="lightbox-thumbnails" aria-label="Fotografiile mașinii"></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
