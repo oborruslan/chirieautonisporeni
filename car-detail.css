@@ -198,3 +198,42 @@
   .detail-site-header, .detail-site-header .brand-placeholder, .detail-site-header .desktop-nav, .detail-site-header .header-actions, .detail-back, .detail-copy-column h1, .detail-specs, .detail-price-card, .detail-desktop-actions, .detail-gallery, .detail-thumbnail, .detail-mobile-actions, .detail-lightbox, #detail-lightbox-image { animation: none !important; }
   .included-main, .included-booking-card, .detail-fleet-cta > *, .detail-footer-shell > *, .included-grid > div { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
+
+/* Pagina mașinii — variantă luminoasă */
+.car-detail-page { color: var(--ink); background: #fffdf9; }
+.detail-header-phone { gap: 8px; }
+.detail-hero { color: var(--ink); background: linear-gradient(120deg, #fffaf2 0%, #f8fafc 100%); border-bottom: 1px solid #e9edf1; }
+.detail-back { color: #6d7889; }
+.detail-back:hover { color: var(--brand-hover); }
+.detail-specs { border-color: #dfe4ea; }
+.detail-specs li { color: #566176; }
+.detail-price-card { border-color: #dfe4ea; border-left-color: var(--brand); background: #fff; box-shadow: 0 10px 28px rgb(30 41 59 / 6%); }
+.detail-price-card > span, .detail-price-card small { color: #6d7889; }
+.detail-request-button, .detail-call-button { border-color: #d9e0e7; }
+.detail-call-button { color: var(--ink); background: #fff; }
+.detail-call-button:hover { border-color: var(--brand); color: var(--brand-hover); background: #fffaf2; }
+.detail-gallery-stage { background: #e8edf2; box-shadow: 0 24px 55px rgb(30 41 59 / 16%); }
+.included-section { background: #fffaf2; }
+.detail-fleet-cta { background: #fffdf9; }
+
+.detail-footer { color: var(--ink); background: #fff5e6; border-top: 1px solid #eadfce; }
+.detail-footer-brand p, .detail-footer p { color: #667085; }
+.detail-footer h3 { color: #a85400; }
+.detail-footer a { color: #566176; }
+.detail-footer a:hover { color: var(--brand-hover); }
+.detail-footer-bottom { border-top-color: #e7dccb; color: #7a8494; }
+
+.detail-floating-whatsapp, .detail-floating-phone { position: fixed; z-index: 42; right: 28px; width: 62px; height: 62px; display: grid; place-items: center; border: 0; border-radius: 50%; color: #fff; box-shadow: 0 10px 28px rgb(0 0 0 / 18%); cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+.detail-floating-whatsapp { bottom: 104px; background: #25d366; }
+.detail-floating-phone { bottom: 28px; background: var(--brand); text-decoration: none; }
+.detail-floating-whatsapp:hover, .detail-floating-phone:hover { transform: translateY(-3px); box-shadow: 0 15px 32px rgb(0 0 0 / 22%); }
+.detail-floating-whatsapp svg { width: 34px; height: 34px; fill: #fff; }
+.detail-floating-phone svg { width: 28px; height: 28px; fill: none; stroke: #fff; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+
+@media (max-width: 650px) {
+  .detail-site-header { background: rgb(255 255 255 / 97%); }
+  .detail-mobile-actions { background: #fff; border-top-color: #dde3ea; box-shadow: 0 -10px 28px rgb(30 41 59 / 13%); }
+  .detail-mobile-actions a, .detail-mobile-actions button { border-color: #d5dde6; color: var(--ink); background: #fff; }
+  .detail-mobile-actions button { border-color: var(--brand); color: #fff; background: var(--brand); }
+  .detail-floating-whatsapp, .detail-floating-phone { display: none; }
+}

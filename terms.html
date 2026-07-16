@@ -21,7 +21,7 @@
       <button id="mobile-nav-toggle" class="mobile-nav-toggle" type="button" aria-label="Deschide meniul" aria-expanded="false" aria-controls="mobile-nav-panel">
         <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
-      <a class="account-link" href="index.html#fleet" data-i18n="myBooking">Rezervarea mea</a>
+      <a class="account-link header-phone-link" href="index.html#contact" data-call-link><span aria-hidden="true">☎</span> <span data-phone-display>Sună-ne acum</span></a>
       <a class="header-icon-link" href="index.html#fleet" aria-label="Rezervare"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 21v-2a5 5 0 0 0-5-5H9a5 5 0 0 0-5 5v2M12 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/></svg></a>
       <div class="language-switcher">
         <button id="language-button" class="language-button" type="button" aria-label="Selectează limba" aria-expanded="false" aria-controls="language-menu">
@@ -72,14 +72,16 @@
         <div><h3 data-i18n="booking">Rezervare</h3><a href="index.html#fleet" data-i18n="findCar">Caută o mașină</a><a href="index.html#fleet" data-i18n="navFleet">Flota noastră</a></div>
         <div><h3 data-i18n="information">Informații</h3><a href="about.html" data-i18n="navAbout">Despre noi</a><a href="terms.html" data-i18n="navTerms">Termeni și condiții</a><a href="#" data-i18n="privacy">Politica de confidențialitate</a><a href="#" data-i18n="faq">Întrebări frecvente</a></div>
         <div><h3 data-i18n="location">Locație</h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Nisporeni%2C%20Republica%20Moldova" target="_blank" rel="noopener noreferrer">Nisporeni</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Nisporeni%2C%20Republica%20Moldova" target="_blank" rel="noopener noreferrer" data-i18n="moldova">Republica Moldova</a><p data-i18n="delivery">Predarea și ridicarea se confirmă la rezervare.</p></div>
-        <div><h3 data-i18n="navContact">Contact</h3><p data-i18n="bookingWhatsapp">Rezervările sunt pregătite direct în WhatsApp.</p><a href="index.html#fleet" data-i18n="sendBooking">Trimite o rezervare</a></div>
+        <div><h3 data-i18n="navContact">Contact</h3><p data-i18n="phoneWhatsapp">Telefon și WhatsApp</p><a href="index.html#contact" data-call-link data-phone-display>Sună-ne acum</a></div>
       </div>
       <div class="footer-bottom"><span data-i18n="copyright">© 2026 Închirieri auto Nisporeni</span><span data-i18n="availability">Prețurile și disponibilitatea se confirmă înainte de rezervare.</span></div>
     </div>
   </footer>
 
   <button id="floating-whatsapp" class="floating-safety floating-whatsapp" type="button" aria-label="Deschide WhatsApp"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16.05 4.5A11.42 11.42 0 0 0 6.2 21.7L4.5 27.5l5.95-1.62A11.5 11.5 0 1 0 16.05 4.5Zm0 20.87c-1.8 0-3.56-.5-5.08-1.45l-.36-.22-3.53.96.95-3.43-.24-.37a9.3 9.3 0 1 1 8.26 4.51Zm5.1-6.96c-.28-.14-1.65-.81-1.9-.9-.26-.1-.45-.14-.64.14-.19.28-.73.9-.9 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39a8.43 8.43 0 0 1-1.56-1.94c-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.5-.07-.14-.64-1.54-.87-2.1-.23-.56-.47-.48-.64-.49h-.54c-.19 0-.5.07-.76.35-.26.28-1 1-1 2.43 0 1.43 1.04 2.81 1.18 3 .14.19 2.04 3.12 4.95 4.38.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.65-.68 1.88-1.33.23-.65.23-1.21.16-1.33-.07-.12-.26-.19-.54-.33Z"/></svg></button>
+  <a id="floating-phone" class="floating-safety floating-phone" href="index.html#contact" data-call-link aria-label="Sună-ne acum"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 3 5 5c-1 1 0 5 4 9s8 5 9 4l2-3-4-2-2 2c-2-1-4-3-5-5l2-2-3-5Z"/></svg></a>
   <button id="scroll-to-top" class="scroll-to-top" type="button" aria-label="Înapoi la începutul paginii"><svg aria-hidden="true" viewBox="0 0 64 64"><circle class="scroll-track" cx="32" cy="32" r="26"/><circle class="scroll-progress" cx="32" cy="32" r="26"/><path class="scroll-arrow" d="M32 43V22M23.5 30.5 32 22l8.5 8.5"/></svg></button>
+  <script src="site-config.js"></script>
   <script src="content-pages.js"></script>
 </body>
 </html>

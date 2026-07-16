@@ -1,4 +1,7 @@
 const INFO_LANGUAGE_NAMES = { ro: 'Română', ru: 'Русский', en: 'English' };
+const INFO_SITE_CONFIG = window.ELITA_CONFIG || {};
+const INFO_PHONE_NUMBER = String(INFO_SITE_CONFIG.phoneNumber || '').replace(/\D/g, '');
+const INFO_WHATSAPP_NUMBER = String(INFO_SITE_CONFIG.whatsappNumber || INFO_PHONE_NUMBER).replace(/\D/g, '');
 
 const INFO_COMMON = {
   ro: {
@@ -8,7 +11,7 @@ const INFO_COMMON = {
     footerTitle: 'Închirieri auto în Nisporeni', footerLead: 'Rezervări flexibile pentru o zi, un weekend, mai multe zile sau perioade lunare, în funcție de disponibilitatea mașinilor.',
     bookingWhatsapp: 'Rezervările sunt pregătite direct în WhatsApp.', sendBooking: 'Trimite o rezervare', copyright: '© 2026 Închirieri auto Nisporeni',
     availability: 'Prețurile și disponibilitatea se confirmă înainte de rezervare.', openMenu: 'Deschide meniul', closeMenu: 'Închide meniul', chooseLanguage: 'Selectează limba',
-    openWhatsapp: 'Deschide WhatsApp', backToTop: 'Înapoi la începutul paginii'
+    openWhatsapp: 'Deschide WhatsApp', backToTop: 'Înapoi la începutul paginii', callNow: 'Sună-ne acum', phoneWhatsapp: 'Telefon și WhatsApp', headerAria: 'Antet principal', homeAria: 'Elita Auto Rent — Acasă'
   },
   ru: {
     navRental: 'Аренда авто', navFleet: 'Наш автопарк', navAbout: 'О нас', navTerms: 'Условия аренды', navContact: 'Контакты',
@@ -17,7 +20,7 @@ const INFO_COMMON = {
     footerTitle: 'Аренда авто в Ниспоренах', footerLead: 'Гибкая аренда на день, выходные, несколько дней или месяц — в зависимости от наличия автомобилей.',
     bookingWhatsapp: 'Заявка на бронирование отправляется через WhatsApp.', sendBooking: 'Отправить заявку', copyright: '© 2026 Аренда авто Ниспорены',
     availability: 'Цена и наличие подтверждаются до бронирования.', openMenu: 'Открыть меню', closeMenu: 'Закрыть меню', chooseLanguage: 'Выбрать язык',
-    openWhatsapp: 'Открыть WhatsApp', backToTop: 'Наверх'
+    openWhatsapp: 'Открыть WhatsApp', backToTop: 'Наверх', callNow: 'Позвонить сейчас', phoneWhatsapp: 'Телефон и WhatsApp', headerAria: 'Основной заголовок', homeAria: 'Elita Auto Rent — Главная'
   },
   en: {
     navRental: 'Car rental', navFleet: 'Our fleet', navAbout: 'About us', navTerms: 'Terms and conditions', navContact: 'Contact',
@@ -26,7 +29,7 @@ const INFO_COMMON = {
     footerTitle: 'Car rental in Nisporeni', footerLead: 'Flexible rentals for a day, a weekend, several days or a month, subject to vehicle availability.',
     bookingWhatsapp: 'Booking requests are prepared directly in WhatsApp.', sendBooking: 'Send a booking', copyright: '© 2026 Nisporeni car rental',
     availability: 'Prices and availability are confirmed before booking.', openMenu: 'Open menu', closeMenu: 'Close menu', chooseLanguage: 'Select language',
-    openWhatsapp: 'Open WhatsApp', backToTop: 'Back to top'
+    openWhatsapp: 'Open WhatsApp', backToTop: 'Back to top', callNow: 'Call us now', phoneWhatsapp: 'Phone and WhatsApp', headerAria: 'Main header', homeAria: 'Elita Auto Rent — Home'
   }
 };
 
@@ -168,9 +171,19 @@ function applyInfoLanguage(language) {
   });
   document.title = pageCopy().pageTitle;
   infoLanguageLabel.textContent = INFO_LANGUAGE_NAMES[infoLanguage];
+  document.querySelector('.site-header').setAttribute('aria-label', INFO_COMMON[infoLanguage].headerAria);
+  document.querySelector('.brand-placeholder').setAttribute('aria-label', INFO_COMMON[infoLanguage].homeAria);
   infoLanguageButton.setAttribute('aria-label', INFO_COMMON[infoLanguage].chooseLanguage);
   infoMobileToggle.setAttribute('aria-label', infoMobilePanel.hidden ? INFO_COMMON[infoLanguage].openMenu : INFO_COMMON[infoLanguage].closeMenu);
   document.querySelector('#floating-whatsapp').setAttribute('aria-label', INFO_COMMON[infoLanguage].openWhatsapp);
+  document.querySelector('#floating-phone').setAttribute('aria-label', INFO_COMMON[infoLanguage].callNow);
+  const phoneDisplay = INFO_SITE_CONFIG.phoneDisplay || INFO_COMMON[infoLanguage].callNow;
+  document.querySelectorAll('[data-phone-display]').forEach((element) => { element.textContent = phoneDisplay; });
+  document.querySelectorAll('[data-call-link]').forEach((element) => {
+    element.href = INFO_PHONE_NUMBER ? `tel:+${INFO_PHONE_NUMBER}` : 'index.html#contact';
+    element.setAttribute('aria-label', INFO_PHONE_NUMBER ? `${INFO_COMMON[infoLanguage].callNow}: ${phoneDisplay}` : INFO_COMMON[infoLanguage].callNow);
+    element.classList.toggle('is-phone-pending', !INFO_PHONE_NUMBER);
+  });
   document.querySelector('#scroll-to-top').setAttribute('aria-label', INFO_COMMON[infoLanguage].backToTop);
   for (const option of infoLanguageMenu.querySelectorAll('[data-language]')) {
     option.setAttribute('aria-current', String(option.dataset.language === infoLanguage));
@@ -235,7 +248,8 @@ document.querySelector('#floating-whatsapp').addEventListener('click', () => {
     ru: 'Здравствуйте! Хочу узнать об аренде автомобиля в Ниспоренах.',
     en: 'Hello! I would like information about renting a car in Nisporeni.'
   };
-  window.open(`https://wa.me/?text=${encodeURIComponent(messages[infoLanguage])}`, '_blank', 'noopener,noreferrer');
+  const base = INFO_WHATSAPP_NUMBER ? `https://wa.me/${INFO_WHATSAPP_NUMBER}` : 'https://wa.me/';
+  window.open(`${base}?text=${encodeURIComponent(messages[infoLanguage])}`, '_blank', 'noopener,noreferrer');
 });
 
 const infoScrollButton = document.querySelector('#scroll-to-top');

@@ -23,7 +23,10 @@ const COPY = {
     pickupRequired: 'Este necesară locația preluării autovehiculului', pickupDateRequired: 'Data preluării autovehiculului este necesară', returnDateRequired: 'Data de retur este obligatorie', dropoffRequired: 'Este necesară locația de predare a autovehiculului',
     whatsappTitle: 'Rezervare auto nouă', anyCar: 'Orice mașină disponibilă', carLabel: 'Mașină', pickupLabel: 'Ridicare', dropoffLabel: 'Predare', pickupDateLabel: 'Data ridicării', returnDateLabel: 'Data returului', at: 'la',
     helloInfo: 'Bună ziua! Doresc informații despre închirierea unei mașini în Nisporeni.', helloDiscuss: 'Bună ziua! Doresc să discut cu dvs. despre o închiriere auto în Nisporeni.', helloQuestion: 'Bună ziua! Am o întrebare despre închirierea auto în Nisporeni.', nameLabel: 'Nume', contactLabel: 'Contact', messageLabel: 'Mesaj',
-    resultsLocal: 'Datele au fost validate local. Conectarea la serviciu va fi adăugată ulterior.', requiredField: 'Completați câmpul {field}.', emailRequired: 'Introduceți adresa de e-mail.', emailInvalid: 'Introduceți o adresă de e-mail validă.', passwordShort: 'Parola trebuie să conțină minimum 8 caractere.', resetLater: 'Fluxul de resetare a parolei va fi conectat ulterior.'
+    resultsLocal: 'Datele au fost validate local. Conectarea la serviciu va fi adăugată ulterior.', requiredField: 'Completați câmpul {field}.', emailRequired: 'Introduceți adresa de e-mail.', emailInvalid: 'Introduceți o adresă de e-mail validă.', passwordShort: 'Parola trebuie să conțină minimum 8 caractere.', resetLater: 'Fluxul de resetare a parolei va fi conectat ulterior.',
+    navCars: 'Mașini', navSteps: 'Cum funcționează', heroPrefix: 'Închiriază o mașină în', heroCity: 'Nisporeni', callNow: 'Sună-ne acum', viewFleet: 'Vezi flota', chooseCar: 'Alege o mașină', contactDirect: 'Contact direct', emailTitle: 'E-mail',
+    stepsEyebrow: 'Simplu și rapid', stepsTitle: 'Cum închiriezi o mașină?', stepOneTitle: 'Alege mașina', stepOneText: 'Vezi fotografiile și găsește modelul potrivit pentru drumul tău.', stepTwoTitle: 'Selectează perioada', stepTwoText: 'Spune-ne perioada dorită atunci când trimiți solicitarea.', stepThreeTitle: 'Confirmă pe WhatsApp', stepThreeText: 'Trimite cererea, iar noi confirmăm rapid disponibilitatea și prețul.', viewCarDetails: 'Vezi detaliile mașinii',
+    headerAria: 'Antet principal', homeAria: 'Elita Auto Rent — Acasă', openMenu: 'Deschide meniul', closeMenu: 'Închide meniul', chooseLanguage: 'Selectează limba', openWhatsapp: 'Deschide WhatsApp', backToTop: 'Înapoi la începutul paginii'
   },
   ru: {
     pageTitle: 'Elita Auto Rent | Аренда авто в Ниспоренах', navRental: 'Аренда авто', fleet: 'Наш автопарк', rates: 'Тарифы', contact: 'Контакты', myBooking: 'Моя бронь',
@@ -43,7 +46,10 @@ const COPY = {
     pickupRequired: 'Укажите место получения автомобиля', pickupDateRequired: 'Укажите дату получения автомобиля', returnDateRequired: 'Укажите дату возврата', dropoffRequired: 'Укажите место возврата автомобиля',
     whatsappTitle: 'Новая заявка на аренду авто', anyCar: 'Любой доступный автомобиль', carLabel: 'Автомобиль', pickupLabel: 'Получение', dropoffLabel: 'Возврат', pickupDateLabel: 'Дата получения', returnDateLabel: 'Дата возврата', at: 'в',
     helloInfo: 'Здравствуйте! Хочу узнать об аренде автомобиля в Ниспоренах.', helloDiscuss: 'Здравствуйте! Хочу обсудить аренду автомобиля в Ниспоренах.', helloQuestion: 'Здравствуйте! У меня есть вопрос об аренде автомобиля в Ниспоренах.', nameLabel: 'Имя', contactLabel: 'Контакт', messageLabel: 'Сообщение',
-    resultsLocal: 'Данные проверены локально. Подключение к сервису будет добавлено позже.', requiredField: 'Заполните поле «{field}».', emailRequired: 'Введите адрес электронной почты.', emailInvalid: 'Введите корректный адрес электронной почты.', passwordShort: 'Пароль должен содержать не менее 8 символов.', resetLater: 'Восстановление пароля будет подключено позже.'
+    resultsLocal: 'Данные проверены локально. Подключение к сервису будет добавлено позже.', requiredField: 'Заполните поле «{field}».', emailRequired: 'Введите адрес электронной почты.', emailInvalid: 'Введите корректный адрес электронной почты.', passwordShort: 'Пароль должен содержать не менее 8 символов.', resetLater: 'Восстановление пароля будет подключено позже.',
+    navCars: 'Автомобили', navSteps: 'Как это работает', heroPrefix: 'Арендуйте автомобиль в', heroCity: 'Ниспоренах', callNow: 'Позвонить сейчас', viewFleet: 'Посмотреть автопарк', chooseCar: 'Выбрать автомобиль', contactDirect: 'Прямая связь', emailTitle: 'Электронная почта',
+    stepsEyebrow: 'Просто и быстро', stepsTitle: 'Как арендовать автомобиль?', stepOneTitle: 'Выберите автомобиль', stepOneText: 'Посмотрите фотографии и выберите подходящую модель для своей поездки.', stepTwoTitle: 'Укажите период', stepTwoText: 'Сообщите желаемый период при отправке заявки.', stepThreeTitle: 'Подтвердите в WhatsApp', stepThreeText: 'Отправьте заявку, и мы быстро подтвердим наличие и цену.', viewCarDetails: 'Открыть страницу автомобиля',
+    headerAria: 'Основной заголовок', homeAria: 'Elita Auto Rent — Главная', openMenu: 'Открыть меню', closeMenu: 'Закрыть меню', chooseLanguage: 'Выбрать язык', openWhatsapp: 'Открыть WhatsApp', backToTop: 'Наверх'
   },
   en: {
     pageTitle: 'Elita Auto Rent | Car rental in Nisporeni', navRental: 'Car rental', fleet: 'Our fleet', rates: 'Rates', contact: 'Contact', myBooking: 'My booking',
@@ -63,7 +69,10 @@ const COPY = {
     pickupRequired: 'The vehicle pickup location is required', pickupDateRequired: 'The vehicle pickup date is required', returnDateRequired: 'The return date is required', dropoffRequired: 'The vehicle return location is required',
     whatsappTitle: 'New car rental booking', anyCar: 'Any available car', carLabel: 'Car', pickupLabel: 'Pickup', dropoffLabel: 'Return', pickupDateLabel: 'Pickup date', returnDateLabel: 'Return date', at: 'at',
     helloInfo: 'Hello! I would like information about renting a car in Nisporeni.', helloDiscuss: 'Hello! I would like to discuss a car rental in Nisporeni.', helloQuestion: 'Hello! I have a question about car rental in Nisporeni.', nameLabel: 'Name', contactLabel: 'Contact', messageLabel: 'Message',
-    resultsLocal: 'The details were validated locally. The service connection will be added later.', requiredField: 'Complete the {field} field.', emailRequired: 'Enter your e-mail address.', emailInvalid: 'Enter a valid e-mail address.', passwordShort: 'The password must contain at least 8 characters.', resetLater: 'The password reset flow will be connected later.'
+    resultsLocal: 'The details were validated locally. The service connection will be added later.', requiredField: 'Complete the {field} field.', emailRequired: 'Enter your e-mail address.', emailInvalid: 'Enter a valid e-mail address.', passwordShort: 'The password must contain at least 8 characters.', resetLater: 'The password reset flow will be connected later.',
+    navCars: 'Cars', navSteps: 'How it works', heroPrefix: 'Rent a car in', heroCity: 'Nisporeni', callNow: 'Call us now', viewFleet: 'View the fleet', chooseCar: 'Choose a car', contactDirect: 'Direct contact', emailTitle: 'E-mail',
+    stepsEyebrow: 'Simple and quick', stepsTitle: 'How do you rent a car?', stepOneTitle: 'Choose a car', stepOneText: 'Browse the photos and choose the right model for your trip.', stepTwoTitle: 'Choose the period', stepTwoText: 'Tell us your preferred rental period when you send the request.', stepThreeTitle: 'Confirm on WhatsApp', stepThreeText: 'Send your request and we will quickly confirm availability and price.', viewCarDetails: 'View car details',
+    headerAria: 'Main header', homeAria: 'Elita Auto Rent — Home', openMenu: 'Open menu', closeMenu: 'Close menu', chooseLanguage: 'Select language', openWhatsapp: 'Open WhatsApp', backToTop: 'Back to top'
   }
 };
 
@@ -120,9 +129,9 @@ const locations = [
   'Nisporeni, Republica Moldova'
 ];
 
-// Introdu aici numărul WhatsApp al firmei, cu prefix de țară și numai cifre.
-// Exemplu Republica Moldova: '37360123456'. Dacă rămâne gol, WhatsApp permite alegerea contactului.
-const WHATSAPP_NUMBER = '';
+const SITE_CONFIG = window.ELITA_CONFIG || {};
+const PHONE_NUMBER = String(SITE_CONFIG.phoneNumber || '').replace(/\D/g, '');
+const WHATSAPP_NUMBER = String(SITE_CONFIG.whatsappNumber || PHONE_NUMBER).replace(/\D/g, '');
 
 const form = document.querySelector('#booking-form');
 const pickupInput = document.querySelector('#pickup-location');
@@ -199,6 +208,21 @@ function applyStaticTranslations() {
   }
 }
 
+function applyContactConfiguration() {
+  const phoneDisplay = SITE_CONFIG.phoneDisplay || t('callNow');
+  const callHref = PHONE_NUMBER ? `tel:+${PHONE_NUMBER}` : '#contact';
+  document.querySelectorAll('[data-phone-display]').forEach((element) => { element.textContent = phoneDisplay; });
+  document.querySelectorAll('[data-call-label]').forEach((element) => { element.textContent = t('callNow'); });
+  document.querySelectorAll('[data-fleet-label]').forEach((element) => { element.textContent = t('viewFleet'); });
+  document.querySelectorAll('[data-hero-prefix]').forEach((element) => { element.textContent = t('heroPrefix'); });
+  document.querySelectorAll('[data-hero-city]').forEach((element) => { element.textContent = t('heroCity'); });
+  document.querySelectorAll('[data-call-link]').forEach((element) => {
+    element.href = callHref;
+    element.setAttribute('aria-label', PHONE_NUMBER ? `${t('callNow')}: ${phoneDisplay}` : t('callNow'));
+    element.classList.toggle('is-phone-pending', !PHONE_NUMBER);
+  });
+}
+
 function applyLanguage(language) {
   currentLanguage = ['ro', 'ru', 'en'].includes(language) ? language : 'ro';
   localStorage.setItem('site-language', currentLanguage);
@@ -209,11 +233,17 @@ function applyLanguage(language) {
   pickupInput.placeholder = locations[0];
   dropoffInput.placeholder = t('dropoffPlaceholder');
   languageLabel.textContent = LANGUAGE_NAMES[currentLanguage];
-  languageButton.setAttribute('aria-label', currentLanguage === 'ru' ? 'Выбрать язык' : currentLanguage === 'en' ? 'Select language' : 'Selectează limba');
+  languageButton.setAttribute('aria-label', t('chooseLanguage'));
+  document.querySelector('.site-header').setAttribute('aria-label', t('headerAria'));
+  document.querySelector('.brand-placeholder').setAttribute('aria-label', t('homeAria'));
+  mobileNavToggle.setAttribute('aria-label', mobileNavPanel.hidden ? t('openMenu') : t('closeMenu'));
+  document.querySelector('#floating-whatsapp').setAttribute('aria-label', t('openWhatsapp'));
+  document.querySelector('#scroll-to-top').setAttribute('aria-label', t('backToTop'));
   for (const option of languageMenu.querySelectorAll('[data-language]')) {
     option.setAttribute('aria-current', String(option.dataset.language === currentLanguage));
   }
   applyStaticTranslations();
+  applyContactConfiguration();
   renderFaq();
   localizeFleetCards();
   if (typeof applyFleetFilters === 'function') applyFleetFilters();
@@ -664,11 +694,13 @@ if (mobileNavToggle && mobileNavPanel) {
     const shouldOpen = mobileNavPanel.hidden;
     mobileNavPanel.hidden = !shouldOpen;
     mobileNavToggle.setAttribute('aria-expanded', String(shouldOpen));
+    mobileNavToggle.setAttribute('aria-label', shouldOpen ? t('closeMenu') : t('openMenu'));
   });
   mobileNavPanel.addEventListener('click', (event) => {
     if (!event.target.closest('a')) return;
     mobileNavPanel.hidden = true;
     mobileNavToggle.setAttribute('aria-expanded', 'false');
+    mobileNavToggle.setAttribute('aria-label', t('openMenu'));
   });
 }
 document.querySelector('#open-login').addEventListener('click', () => openAuthDialog('login'));
@@ -1025,12 +1057,14 @@ function initializeCarGalleries() {
         touchMoved = false;
         return;
       }
-      openImageLightbox(visual);
+      const car = galleryCar(visual);
+      if (car) window.location.href = `car.html?id=${encodeURIComponent(car.id)}`;
     });
     mainImage.addEventListener('keydown', (event) => {
       if (event.key !== 'Enter' && event.key !== ' ') return;
       event.preventDefault();
-      openImageLightbox(visual);
+      const car = galleryCar(visual);
+      if (car) window.location.href = `car.html?id=${encodeURIComponent(car.id)}`;
     });
     visual.addEventListener('touchstart', (event) => {
       touchStartX = event.changedTouches[0].clientX;
@@ -1059,8 +1093,8 @@ function localizeFleetCards() {
     card.querySelector('.price-per-day').textContent = t('perDay');
     card.querySelector('.monthly-request').textContent = t('monthlyRequest');
     card.querySelector('.select-rental-car').textContent = t('reserveNow');
-    card.querySelector('.rental-car-photo').setAttribute('aria-label', t('openPhoto'));
-    card.querySelector('.rental-car-photo').title = t('openPhoto');
+    card.querySelector('.rental-car-photo').setAttribute('aria-label', `${t('viewCarDetails')}: ${car.model}`);
+    card.querySelector('.rental-car-photo').title = t('viewCarDetails');
     updateGalleryLanguage(card.querySelector('.rental-car-visual'), car);
   }
 }

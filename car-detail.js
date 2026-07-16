@@ -5,7 +5,7 @@ const DETAIL_COPY = {
     insurance: 'Asigurare civilă inclusă', fuelPickup: 'Nivelul combustibilului notat la preluare', delivery: 'Predare în Nisporeni', support: 'Suport pentru rezervări 24/7', mileage: 'Condițiile kilometrilor se confirmă', inspection: 'Mașini verificate și întreținute',
     otherCars: 'Vezi și celelalte mașini', viewFleet: 'Vezi toată flota', footerText: 'Închirieri auto simple și rapide în Nisporeni.', company: 'Companie', clients: 'Clienți', terms: 'Termeni și condiții', contactPending: 'Telefonul și e-mailul se configurează înainte de publicare.',
     manual: 'Manuală', automatic: 'Automată', diesel: 'Diesel', petrol: 'Benzină', hybrid: 'Hibrid', economic: 'Economică', estate: 'Break', sedan: 'Sedan', suv: 'SUV', passengers: '{count} locuri', bags: '{count} bagaje', photo: 'Fotografia {current} din {total}', previous: 'Fotografia anterioară', next: 'Fotografia următoare', close: 'Închide galeria',
-    whatsapp: 'Bună ziua! Doresc să rezerv {car}, de la {price} MDL/zi. Vă rog să-mi confirmați disponibilitatea.'
+    whatsapp: 'Bună ziua! Doresc să rezerv {car}, de la {price} MDL/zi. Vă rog să-mi confirmați disponibilitatea.', callNow: 'Sună-ne acum', moldovaLocation: 'Nisporeni, Republica Moldova', headerAria: 'Antet principal', homeAria: 'Elita Auto Rent — Acasă', openMenu: 'Deschide meniul', closeMenu: 'Închide meniul', chooseLanguage: 'Selectează limba', openWhatsapp: 'Scrie pe WhatsApp', specsAria: 'Specificațiile mașinii', galleryAria: 'Galeria mașinii', thumbnailsAria: 'Miniaturi galerie'
   },
   ru: {
     cars: 'Автомобили', steps: 'Как это работает', faq: 'Вопросы', about: 'О нас', contact: 'Контакты', requestShort: 'Запросить', back: 'Назад к автопарку',
@@ -13,7 +13,7 @@ const DETAIL_COPY = {
     insurance: 'Страхование гражданской ответственности', fuelPickup: 'Уровень топлива фиксируется при выдаче', delivery: 'Выдача в Ниспоренах', support: 'Поддержка бронирования 24/7', mileage: 'Условия пробега подтверждаются', inspection: 'Проверенные и обслуженные автомобили',
     otherCars: 'Посмотрите другие автомобили', viewFleet: 'Весь автопарк', footerText: 'Простая и быстрая аренда авто в Ниспоренах.', company: 'Компания', clients: 'Клиентам', terms: 'Условия аренды', contactPending: 'Телефон и e-mail будут добавлены до публикации.',
     manual: 'Механика', automatic: 'Автомат', diesel: 'Дизель', petrol: 'Бензин', hybrid: 'Гибрид', economic: 'Эконом', estate: 'Универсал', sedan: 'Седан', suv: 'SUV', passengers: '{count} мест', bags: '{count} багажа', photo: 'Фото {current} из {total}', previous: 'Предыдущее фото', next: 'Следующее фото', close: 'Закрыть галерею',
-    whatsapp: 'Здравствуйте! Хочу забронировать {car} по цене от {price} MDL/день. Подтвердите, пожалуйста, наличие.'
+    whatsapp: 'Здравствуйте! Хочу забронировать {car} по цене от {price} MDL/день. Подтвердите, пожалуйста, наличие.', callNow: 'Позвонить сейчас', moldovaLocation: 'Ниспорены, Республика Молдова', headerAria: 'Основной заголовок', homeAria: 'Elita Auto Rent — Главная', openMenu: 'Открыть меню', closeMenu: 'Закрыть меню', chooseLanguage: 'Выбрать язык', openWhatsapp: 'Написать в WhatsApp', specsAria: 'Характеристики автомобиля', galleryAria: 'Галерея автомобиля', thumbnailsAria: 'Миниатюры галереи'
   },
   en: {
     cars: 'Cars', steps: 'How it works', faq: 'Questions', about: 'About us', contact: 'Contact', requestShort: 'Request', back: 'Back to fleet',
@@ -21,11 +21,14 @@ const DETAIL_COPY = {
     insurance: 'Civil liability insurance included', fuelPickup: 'Fuel level recorded at pickup', delivery: 'Pickup in Nisporeni', support: 'Booking support 24/7', mileage: 'Mileage terms confirmed at booking', inspection: 'Inspected and maintained cars',
     otherCars: 'See our other cars', viewFleet: 'View the full fleet', footerText: 'Simple and quick car rental in Nisporeni.', company: 'Company', clients: 'Clients', terms: 'Terms and conditions', contactPending: 'Phone and e-mail will be configured before publication.',
     manual: 'Manual', automatic: 'Automatic', diesel: 'Diesel', petrol: 'Petrol', hybrid: 'Hybrid', economic: 'Economy', estate: 'Estate', sedan: 'Sedan', suv: 'SUV', passengers: '{count} seats', bags: '{count} bags', photo: 'Photo {current} of {total}', previous: 'Previous photo', next: 'Next photo', close: 'Close gallery',
-    whatsapp: 'Hello! I would like to book {car}, from {price} MDL/day. Please confirm availability.'
+    whatsapp: 'Hello! I would like to book {car}, from {price} MDL/day. Please confirm availability.', callNow: 'Call us now', moldovaLocation: 'Nisporeni, Republic of Moldova', headerAria: 'Main header', homeAria: 'Elita Auto Rent — Home', openMenu: 'Open menu', closeMenu: 'Close menu', chooseLanguage: 'Select language', openWhatsapp: 'Message on WhatsApp', specsAria: 'Car specifications', galleryAria: 'Car gallery', thumbnailsAria: 'Gallery thumbnails'
   }
 };
 
 const DETAIL_LANGUAGE_NAMES = { ro: 'Română', ru: 'Русский', en: 'English' };
+const DETAIL_SITE_CONFIG = window.ELITA_CONFIG || {};
+const DETAIL_PHONE_NUMBER = String(DETAIL_SITE_CONFIG.phoneNumber || '').replace(/\D/g, '');
+const DETAIL_WHATSAPP_NUMBER = String(DETAIL_SITE_CONFIG.whatsappNumber || DETAIL_PHONE_NUMBER).replace(/\D/g, '');
 const fleet = Array.isArray(window.ELITA_FLEET) ? window.ELITA_FLEET : [];
 const requestedId = new URLSearchParams(window.location.search).get('id');
 const car = fleet.find((item) => item.id === requestedId) || fleet[0];
@@ -57,6 +60,16 @@ function copy(key, values = {}) {
   let value = DETAIL_COPY[detailLanguage][key] || DETAIL_COPY.ro[key] || key;
   for (const [name, replacement] of Object.entries(values)) value = value.replace(`{${name}}`, replacement);
   return value;
+}
+
+function applyContactConfiguration() {
+  const phoneDisplay = DETAIL_SITE_CONFIG.phoneDisplay || copy('callNow');
+  document.querySelectorAll('[data-phone-display]').forEach((element) => { element.textContent = phoneDisplay; });
+  document.querySelectorAll('[data-call-link]').forEach((element) => {
+    element.href = DETAIL_PHONE_NUMBER ? `tel:+${DETAIL_PHONE_NUMBER}` : 'index.html#contact';
+    element.setAttribute('aria-label', DETAIL_PHONE_NUMBER ? `${copy('callNow')}: ${phoneDisplay}` : copy('callNow'));
+    element.classList.toggle('is-phone-pending', !DETAIL_PHONE_NUMBER);
+  });
 }
 
 function carImage(index) {
@@ -156,6 +169,14 @@ function applyLanguage(language) {
   document.documentElement.lang = detailLanguage;
   document.title = `${car.model} | Elita Auto Rent`;
   languageLabel.textContent = DETAIL_LANGUAGE_NAMES[detailLanguage];
+  document.querySelector('.detail-site-header').setAttribute('aria-label', copy('headerAria'));
+  document.querySelector('.brand-placeholder').setAttribute('aria-label', copy('homeAria'));
+  languageButton.setAttribute('aria-label', copy('chooseLanguage'));
+  mobileToggle.setAttribute('aria-label', mobileNav.hidden ? copy('openMenu') : copy('closeMenu'));
+  document.querySelector('.detail-floating-whatsapp').setAttribute('aria-label', copy('openWhatsapp'));
+  document.querySelector('#detail-specs').setAttribute('aria-label', copy('specsAria'));
+  document.querySelector('.detail-gallery').setAttribute('aria-label', copy('galleryAria'));
+  document.querySelector('#detail-thumbnails').setAttribute('aria-label', copy('thumbnailsAria'));
   document.querySelectorAll('[data-copy]').forEach((element) => {
     element.textContent = copy(element.dataset.copy);
   });
@@ -164,12 +185,15 @@ function applyLanguage(language) {
   });
   document.querySelector('#detail-specs').innerHTML = specificationItems().map(([icon, label]) => `<li><span aria-hidden="true">${icon}</span>${label}</li>`).join('');
   document.querySelector('#included-car-summary').textContent = `${copy(car.category)} · ${copy(car.transmission)} · ${copy(car.fuel)}`;
+  document.querySelector('#detail-contact > p').textContent = copy('moldovaLocation');
+  applyContactConfiguration();
   updateGalleryText();
 }
 
 function openWhatsApp() {
   const message = copy('whatsapp', { car: car.model, price: car.price.toLocaleString('ro-MD') });
-  window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+  const base = DETAIL_WHATSAPP_NUMBER ? `https://wa.me/${DETAIL_WHATSAPP_NUMBER}` : 'https://wa.me/';
+  window.open(`${base}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
 }
 
 function addSwipe(element, onPrevious, onNext) {
@@ -263,11 +287,13 @@ mobileToggle.addEventListener('click', () => {
   const open = mobileNav.hidden;
   mobileNav.hidden = !open;
   mobileToggle.setAttribute('aria-expanded', String(open));
+  mobileToggle.setAttribute('aria-label', open ? copy('closeMenu') : copy('openMenu'));
 });
 mobileNav.addEventListener('click', (event) => {
   if (!event.target.closest('a')) return;
   mobileNav.hidden = true;
   mobileToggle.setAttribute('aria-expanded', 'false');
+  mobileToggle.setAttribute('aria-label', copy('openMenu'));
 });
 
 document.addEventListener('click', (event) => {

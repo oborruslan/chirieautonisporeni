@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Detalii, fotografii și rezervare pentru mașinile Elita Auto Rent din Nisporeni.">
-  <meta name="theme-color" content="#0b1220">
+  <meta name="theme-color" content="#fffaf2">
   <title>Mașină | Elita Auto Rent</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="car-detail.css">
@@ -23,7 +23,7 @@
       <button id="detail-mobile-toggle" class="mobile-nav-toggle" type="button" aria-label="Deschide meniul" aria-expanded="false" aria-controls="detail-mobile-nav">
         <span class="detail-menu-lines" aria-hidden="true"><i></i><i></i><i></i></span>
       </button>
-      <button class="account-link detail-header-request" type="button" data-request data-copy="requestShort">Solicită</button>
+      <a class="account-link detail-header-phone" href="index.html#contact" data-call-link><span aria-hidden="true">☎</span> <span data-phone-display>Sună-ne acum</span></a>
       <div class="language-switcher">
         <button id="detail-language-button" class="language-button" type="button" aria-label="Selectează limba" aria-expanded="false" aria-controls="detail-language-menu">
           <span class="detail-globe" aria-hidden="true">◎</span>
@@ -60,7 +60,7 @@
             </div>
             <div class="detail-desktop-actions">
               <button class="detail-request-button" type="button" data-request data-copy="requestCar">Solicită această mașină</button>
-              <a class="detail-call-button" href="index.html#contact"><span aria-hidden="true">☎</span> <span data-copy="call">Sună direct</span></a>
+              <a class="detail-call-button" href="index.html#contact" data-call-link><span aria-hidden="true">☎</span> <span data-copy="call">Sună direct</span></a>
             </div>
           </div>
 
@@ -95,7 +95,7 @@
           <p id="included-car-summary">—</p>
           <div><span data-copy="priceFrom">Preț de la</span><strong><span id="included-price">—</span> MDL</strong></div>
           <button type="button" data-request data-copy="requestNow">Solicită acum</button>
-          <a href="index.html#contact"><span aria-hidden="true">☎</span> <span data-copy="call">Sună direct</span></a>
+          <a href="index.html#contact" data-call-link><span aria-hidden="true">☎</span> <span data-copy="call">Sună direct</span></a>
         </aside>
       </div>
     </section>
@@ -111,17 +111,20 @@
       <div class="detail-footer-brand"><img src="assets/brand/elita-auto-rent-logo.jpg" alt="Elita Auto Rent"><p data-copy="footerText">Închirieri auto simple și rapide în Nisporeni.</p></div>
       <div><h3 data-copy="company">Companie</h3><a href="about.html" data-copy="about">Despre noi</a><a href="index.html#fleet" data-copy="cars">Mașini</a><a href="index.html#contact" data-copy="contact">Contact</a></div>
       <div><h3 data-copy="clients">Clienți</h3><a href="index.html#how-it-works" data-copy="steps">Cum funcționează</a><a href="index.html#faq" data-copy="faq">Întrebări</a><a href="terms.html" data-copy="terms">Termeni și condiții</a></div>
-      <div id="detail-contact"><h3 data-copy="contact">Contact</h3><p data-copy="contactPending">Telefonul și e-mailul se configurează înainte de publicare.</p><p>Nisporeni, Republica Moldova</p></div>
+      <div id="detail-contact"><h3 data-copy="contact">Contact</h3><a href="index.html#contact" data-call-link data-phone-display>Sună-ne acum</a><p>Nisporeni, Republica Moldova</p></div>
     </div>
     <div class="detail-footer-bottom">© 2026 Elita Auto Rent</div>
   </footer>
 
   <div class="detail-mobile-actions" aria-label="Acțiuni rezervare">
-    <a href="index.html#contact"><span aria-hidden="true">☎</span> <span data-copy="call">Sună direct</span></a>
+    <a href="index.html#contact" data-call-link><span aria-hidden="true">☎</span> <span data-copy="call">Sună direct</span></a>
     <button type="button" data-request data-copy="requestCar">Solicită această mașină</button>
   </div>
 
-  <button class="detail-floating-whatsapp" type="button" data-request aria-label="Scrie pe WhatsApp">◉</button>
+  <button class="detail-floating-whatsapp" type="button" data-request aria-label="Scrie pe WhatsApp">
+    <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16.05 4.5A11.42 11.42 0 0 0 6.2 21.7L4.5 27.5l5.95-1.62A11.5 11.5 0 1 0 16.05 4.5Zm0 20.87c-1.8 0-3.56-.5-5.08-1.45l-.36-.22-3.53.96.95-3.43-.24-.37a9.3 9.3 0 1 1 8.26 4.51Zm5.1-6.96c-.28-.14-1.65-.81-1.9-.9-.26-.1-.45-.14-.64.14-.19.28-.73.9-.9 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39a8.43 8.43 0 0 1-1.56-1.94c-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.5-.07-.14-.64-1.54-.87-2.1-.23-.56-.47-.48-.64-.49h-.54c-.19 0-.5.07-.76.35-.26.28-1 1-1 2.43 0 1.43 1.04 2.81 1.18 3 .14.19 2.04 3.12 4.95 4.38.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.65-.68 1.88-1.33.23-.65.23-1.21.16-1.33-.07-.12-.26-.19-.54-.33Z"/></svg>
+  </button>
+  <a class="detail-floating-phone" href="index.html#contact" data-call-link aria-label="Sună-ne acum"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 3 5 5c-1 1 0 5 4 9s8 5 9 4l2-3-4-2-2 2c-2-1-4-3-5-5l2-2-3-5Z"/></svg></a>
 
   <section id="detail-lightbox" class="detail-lightbox" role="dialog" aria-modal="true" aria-label="Galerie foto" hidden>
     <span id="detail-lightbox-counter" class="detail-lightbox-counter"></span>
@@ -131,6 +134,7 @@
     <button id="detail-lightbox-next" class="detail-lightbox-arrow detail-lightbox-next" type="button" aria-label="Fotografia următoare">›</button>
   </section>
 
+  <script src="site-config.js"></script>
   <script src="fleet-data.js"></script>
   <script src="car-detail.js"></script>
 </body>
