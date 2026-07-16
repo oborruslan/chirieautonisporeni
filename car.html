@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Detalii, fotografii și rezervare pentru mașinile Elita Auto Rent din Nisporeni.">
+  <meta name="theme-color" content="#0b1220">
+  <title>Mașină | Elita Auto Rent</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="car-detail.css">
+</head>
+<body class="car-detail-page">
+  <header class="site-header detail-site-header" aria-label="Antet principal">
+    <a class="brand-placeholder" href="index.html" aria-label="Elita Auto Rent — Acasă"><img class="brand-logo" src="assets/brand/elita-auto-rent-logo.jpg" alt="Elita Auto Rent"></a>
+    <nav class="desktop-nav" aria-label="Navigație principală">
+      <a href="index.html#fleet" data-copy="cars">Mașini</a>
+      <a href="index.html#how-it-works" data-copy="steps">Cum funcționează</a>
+      <a href="about.html" data-copy="about">Despre noi</a>
+      <a href="index.html#contact" data-copy="contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button id="detail-mobile-toggle" class="mobile-nav-toggle" type="button" aria-label="Deschide meniul" aria-expanded="false" aria-controls="detail-mobile-nav">
+        <span class="detail-menu-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+      <button class="account-link detail-header-request" type="button" data-request data-copy="requestShort">Solicită</button>
+      <div class="language-switcher">
+        <button id="detail-language-button" class="language-button" type="button" aria-label="Selectează limba" aria-expanded="false" aria-controls="detail-language-menu">
+          <span class="detail-globe" aria-hidden="true">◎</span>
+          <span id="detail-language-label">Română</span>
+          <span class="detail-language-chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div id="detail-language-menu" class="language-menu" hidden>
+          <button type="button" data-language="ro" aria-current="true">Română <small>RO</small></button>
+          <button type="button" data-language="ru">Русский <small>RU</small></button>
+          <button type="button" data-language="en">English <small>EN</small></button>
+        </div>
+      </div>
+    </div>
+    <nav id="detail-mobile-nav" class="mobile-nav-panel" aria-label="Navigație mobilă" hidden>
+      <a href="index.html#fleet" data-copy="cars">Mașini</a>
+      <a href="index.html#how-it-works" data-copy="steps">Cum funcționează</a>
+      <a href="about.html" data-copy="about">Despre noi</a>
+      <a href="index.html#contact" data-copy="contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="detail-hero" aria-labelledby="detail-title">
+      <div class="detail-shell">
+        <a class="detail-back" href="index.html#fleet"><span aria-hidden="true">←</span> <span data-copy="back">Înapoi la flotă</span></a>
+        <div class="detail-layout">
+          <div class="detail-copy-column">
+            <h1 id="detail-title">Mașină</h1>
+            <ul id="detail-specs" class="detail-specs" aria-label="Specificațiile mașinii"></ul>
+            <div class="detail-price-card">
+              <span data-copy="priceFrom">Preț de la</span>
+              <strong><span id="detail-price">—</span> <small>MDL<span data-copy="perDay">/zi</span></small></strong>
+            </div>
+            <div class="detail-desktop-actions">
+              <button class="detail-request-button" type="button" data-request data-copy="requestCar">Solicită această mașină</button>
+              <a class="detail-call-button" href="index.html#contact"><span aria-hidden="true">☎</span> <span data-copy="call">Sună direct</span></a>
+            </div>
+          </div>
+
+          <div class="detail-gallery" aria-label="Galeria mașinii">
+            <div class="detail-gallery-stage">
+              <img id="detail-main-image" src="" alt="" tabindex="0" role="button">
+              <button id="detail-gallery-prev" class="detail-gallery-arrow detail-gallery-prev" type="button" aria-label="Fotografia anterioară">‹</button>
+              <button id="detail-gallery-next" class="detail-gallery-arrow detail-gallery-next" type="button" aria-label="Fotografia următoare">›</button>
+              <span id="detail-gallery-counter" class="detail-gallery-counter"></span>
+              <div id="detail-thumbnails" class="detail-thumbnails" aria-label="Miniaturi galerie"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="included-section" aria-labelledby="included-title">
+      <div class="included-shell">
+        <div class="included-main">
+          <h2 id="included-title" data-copy="included">Ce este inclus</h2>
+          <div class="included-grid">
+            <div><span aria-hidden="true">◇</span><p data-copy="insurance">Asigurare civilă inclusă</p></div>
+            <div><span aria-hidden="true">▣</span><p data-copy="fuelPickup">Nivelul combustibilului notat la preluare</p></div>
+            <div><span aria-hidden="true">⌖</span><p data-copy="delivery">Predare în Nisporeni</p></div>
+            <div><span aria-hidden="true">◷</span><p data-copy="support">Suport pentru rezervări 24/7</p></div>
+            <div><span aria-hidden="true">✓</span><p data-copy="mileage">Condițiile kilometrilor se confirmă</p></div>
+            <div><span aria-hidden="true">⚙</span><p data-copy="inspection">Mașini verificate și întreținute</p></div>
+          </div>
+        </div>
+        <aside class="included-booking-card">
+          <h3 id="included-car-name">Mașină</h3>
+          <p id="included-car-summary">—</p>
+          <div><span data-copy="priceFrom">Preț de la</span><strong><span id="included-price">—</span> MDL</strong></div>
+          <button type="button" data-request data-copy="requestNow">Solicită acum</button>
+          <a href="index.html#contact"><span aria-hidden="true">☎</span> <span data-copy="call">Sună direct</span></a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="detail-fleet-cta">
+      <div><span class="section-eyebrow">Elita Auto Rent</span><h2 data-copy="otherCars">Vezi și celelalte mașini</h2></div>
+      <a href="index.html#fleet" data-copy="viewFleet">Vezi toată flota</a>
+    </section>
+  </main>
+
+  <footer class="detail-footer">
+    <div class="detail-footer-shell">
+      <div class="detail-footer-brand"><img src="assets/brand/elita-auto-rent-logo.jpg" alt="Elita Auto Rent"><p data-copy="footerText">Închirieri auto simple și rapide în Nisporeni.</p></div>
+      <div><h3 data-copy="company">Companie</h3><a href="about.html" data-copy="about">Despre noi</a><a href="index.html#fleet" data-copy="cars">Mașini</a><a href="index.html#contact" data-copy="contact">Contact</a></div>
+      <div><h3 data-copy="clients">Clienți</h3><a href="index.html#how-it-works" data-copy="steps">Cum funcționează</a><a href="terms.html" data-copy="terms">Termeni și condiții</a></div>
+      <div id="detail-contact"><h3 data-copy="contact">Contact</h3><p data-copy="contactPending">Telefonul și e-mailul se configurează înainte de publicare.</p><p>Nisporeni, Republica Moldova</p></div>
+    </div>
+    <div class="detail-footer-bottom">© 2026 Elita Auto Rent</div>
+  </footer>
+
+  <div class="detail-mobile-actions" aria-label="Acțiuni rezervare">
+    <a href="index.html#contact"><span aria-hidden="true">☎</span> <span data-copy="call">Sună direct</span></a>
+    <button type="button" data-request data-copy="requestCar">Solicită această mașină</button>
+  </div>
+
+  <button class="detail-floating-whatsapp" type="button" data-request aria-label="Scrie pe WhatsApp">◉</button>
+
+  <section id="detail-lightbox" class="detail-lightbox" role="dialog" aria-modal="true" aria-label="Galerie foto" hidden>
+    <span id="detail-lightbox-counter" class="detail-lightbox-counter"></span>
+    <button id="detail-lightbox-close" class="detail-lightbox-close" type="button" aria-label="Închide galeria">×</button>
+    <button id="detail-lightbox-prev" class="detail-lightbox-arrow detail-lightbox-prev" type="button" aria-label="Fotografia anterioară">‹</button>
+    <div class="detail-lightbox-frame"><img id="detail-lightbox-image" src="" alt=""></div>
+    <button id="detail-lightbox-next" class="detail-lightbox-arrow detail-lightbox-next" type="button" aria-label="Fotografia următoare">›</button>
+  </section>
+
+  <script src="fleet-data.js"></script>
+  <script src="car-detail.js"></script>
+</body>
+</html>

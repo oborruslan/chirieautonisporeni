@@ -917,3 +917,336 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
+
+/* Elita Auto Rent — direcție vizuală simplă, inspirată de structura W.Rent */
+:root {
+  --brand: #d9831f;
+  --brand-hover: #b96910;
+  --accent: #c67718;
+  --brand-dark: #0b1220;
+  --brand-cream: #f4ecdc;
+  --accent-soft: #fff3df;
+  --ink: #111827;
+  --muted: #647083;
+  --border: #dfe3e8;
+  --shell-max: 1180px;
+  --radius: 12px;
+  font-family: "Segoe UI", Inter, Arial, sans-serif;
+  background: #f5f6f7;
+}
+
+html { scroll-behavior: smooth; }
+body { color: var(--ink); background: #f5f6f7; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  min-height: 84px;
+  padding: 8px max(24px, calc((100vw - var(--shell-max)) / 2));
+  gap: clamp(28px, 4vw, 64px);
+  color: #fff;
+  background: rgb(8 15 28 / 97%);
+  border-bottom: 1px solid rgb(255 255 255 / 8%);
+  box-shadow: 0 10px 30px rgb(2 8 18 / 16%);
+  backdrop-filter: blur(12px);
+}
+
+.brand-placeholder {
+  width: 96px;
+  height: 68px;
+  border: 0;
+  border-radius: 5px;
+  background: #211600;
+  box-shadow: none;
+}
+
+.brand-logo { object-fit: cover; }
+.desktop-nav { gap: clamp(20px, 2.2vw, 34px); }
+.desktop-nav a { color: #d8dee8; font-size: 15px; font-weight: 600; }
+.desktop-nav a:hover { color: #fff; text-decoration-color: var(--brand); }
+.header-actions { gap: 18px; }
+.header-icon-link { display: none; }
+.account-link {
+  min-height: 48px;
+  padding: 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: #fff;
+  background: var(--brand);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+.account-link:hover { color: #fff; background: var(--brand-hover); text-decoration: none; }
+.language-button { color: #d8dee8; font-size: 14px; }
+.language-button svg { width: 22px; height: 22px; }
+.mobile-nav-toggle { color: #fff; border-color: rgb(255 255 255 / 22%); background: transparent; }
+.mobile-nav-panel { color: var(--ink); }
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(circle at 75% 42%, rgb(217 131 31 / 20%), transparent 28%),
+    linear-gradient(115deg, #0b1220 0%, #0d1627 64%, #111a29 100%);
+}
+
+.hero-section::before,
+.hero-section::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+.hero-section::before {
+  inset: 0;
+  opacity: .16;
+  background-image: linear-gradient(rgb(255 255 255 / 5%) 1px, transparent 1px), linear-gradient(90deg, rgb(255 255 255 / 5%) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to right, transparent, #000 42%, #000);
+}
+.hero-section::after {
+  width: 440px;
+  height: 440px;
+  right: -180px;
+  bottom: -260px;
+  border: 1px solid rgb(217 131 31 / 28%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 70px rgb(217 131 31 / 4%), 0 0 0 140px rgb(217 131 31 / 3%);
+}
+
+.hero-shell {
+  position: relative;
+  z-index: 1;
+  width: min(var(--shell-max), calc(100% - 48px));
+  min-height: 590px;
+  margin: 0 auto;
+  padding: 74px 0 106px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .75fr);
+  align-items: center;
+  gap: clamp(54px, 8vw, 118px);
+}
+
+.hero-copy { max-width: 670px; }
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #e8a64d;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.hero-eyebrow::before { content: ""; width: 34px; height: 2px; background: currentColor; }
+.hero-copy h1 {
+  max-width: 680px;
+  margin: 22px 0 22px;
+  font-size: clamp(46px, 6.3vw, 82px);
+  line-height: .98;
+  letter-spacing: -.055em;
+}
+.hero-copy > p { max-width: 580px; margin: 0; color: #aeb8c7; font-size: clamp(17px, 2vw, 21px); line-height: 1.55; }
+.hero-actions { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 13px; }
+.hero-actions a {
+  min-height: 54px;
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+}
+.hero-primary { border-color: var(--brand) !important; background: var(--brand); }
+.hero-primary:hover { border-color: var(--brand-hover) !important; background: var(--brand-hover); }
+.hero-secondary:hover { border-color: rgb(255 255 255 / 42%); background: rgb(255 255 255 / 8%); }
+.hero-benefits { margin: 38px 0 0; padding: 26px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; border-top: 1px solid rgb(255 255 255 / 12%); list-style: none; }
+.hero-benefits li { min-width: 0; }
+.hero-benefits strong, .hero-benefits span { display: block; }
+.hero-benefits strong { color: #fff; font-size: 24px; }
+.hero-benefits span { margin-top: 2px; color: #8895a8; font-size: 12px; }
+
+.hero-logo-card {
+  position: relative;
+  width: min(100%, 390px);
+  justify-self: end;
+  overflow: hidden;
+  border: 1px solid rgb(232 166 77 / 40%);
+  border-radius: 22px;
+  background: #211600;
+  box-shadow: 0 32px 70px rgb(0 0 0 / 42%);
+  transform: rotate(1.5deg);
+}
+.hero-logo-card::after { content: ""; position: absolute; inset: 10px; border: 1px solid rgb(255 255 255 / 10%); border-radius: 14px; pointer-events: none; }
+.hero-logo-card img { position: relative; z-index: 1; width: 100%; height: auto; display: block; }
+.hero-logo-glow { position: absolute; inset: 25% 10%; border-radius: 50%; background: rgb(217 131 31 / 26%); filter: blur(45px); }
+
+.booking-section { padding: 0 0 34px; background: #f5f6f7; }
+.booking-shell {
+  position: relative;
+  z-index: 4;
+  max-width: var(--shell-max);
+  min-height: 0;
+  margin: -62px auto 0;
+  padding: 24px;
+  border: 1px solid #e1e5e9;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 24px 60px rgb(10 20 36 / 14%);
+}
+.booking-shell::before { content: "Rezervă mașina"; display: block; margin: 0 0 15px; color: #111827; font-size: 17px; font-weight: 850; }
+.different-location-row { display: none; }
+.booking-form { grid-template-columns: minmax(300px, 1.5fr) minmax(205px, 1fr) minmax(205px, 1fr) minmax(175px, .8fr); gap: 12px; }
+.field-card { height: 82px; padding: 13px 15px 9px; border-color: #e0e4e9; box-shadow: none; }
+.field-card:focus-within { border-color: var(--brand); box-shadow: 0 0 0 3px rgb(217 131 31 / 12%); }
+.field-card label { color: #687385; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .035em; }
+.field-card label svg { color: var(--brand); stroke: var(--brand); }
+.field-card input, .field-card select { color: #101827; font-weight: 650; }
+.location-card > input { font-size: 16px; }
+.field-chevron { display: none; }
+.network-badge { display: none; }
+.search-button { height: 82px; border: 0; border-radius: 11px; color: #fff; background: var(--brand); box-shadow: 0 8px 20px rgb(217 131 31 / 23%); text-transform: none; }
+.search-button:hover { color: #fff; background: var(--brand-hover); }
+.search-button svg { display: block; }
+
+.rental-fleet-section { padding: 86px 0 104px; background: #fff; }
+.rental-fleet-shell { max-width: var(--shell-max); }
+.fleet-heading { margin-bottom: 32px; align-items: end; }
+.section-eyebrow { color: var(--brand); letter-spacing: .17em; }
+.fleet-heading h2 { margin-top: 10px; font-size: clamp(36px, 4vw, 54px); line-height: 1; letter-spacing: -.035em; }
+.fleet-heading > p { max-width: 500px; color: #697486; font-size: 16px; }
+.mobile-filter-toggle,
+.fleet-filter-sidebar { display: none !important; }
+.fleet-catalog-layout { display: block; }
+.fleet-results-bar { margin-bottom: 22px; padding: 0; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; }
+.fleet-results-bar select { border: 0; background-color: #f5f6f7; }
+.rental-car-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.rental-car-card {
+  min-height: 0;
+  padding: 0;
+  border: 1px solid #e2e6eb;
+  border-radius: 17px;
+  box-shadow: 0 8px 26px rgb(14 24 39 / 7%);
+}
+.rental-car-visual { order: -1; aspect-ratio: 16 / 10; margin: 0; border-radius: 16px 16px 0 0; background: #e9edf1; }
+.rental-card-copy { padding: 21px 21px 10px; }
+.rental-card-copy h3 { min-height: 0; color: #111827; font-size: 20px; }
+.car-detail-link { color: inherit; text-decoration: none; }
+.car-detail-link:hover { color: var(--brand-hover); }
+.car-detail-link::after { content: "  →"; color: var(--brand); }
+.rental-card-copy > p { min-height: 0; margin: 8px 0 15px; color: #697486; }
+.rental-card-copy ul { padding-top: 14px; gap: 10px; border-top: 1px solid #e9ebee; color: #566174; font-size: 13px; }
+.rental-card-copy li::before { color: var(--brand); }
+.rental-card-footer { padding: 12px 21px 21px; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 12px; }
+.rental-card-footer strong { font-size: 24px; }
+.rental-card-footer > div > span { font-size: 14px; }
+.select-rental-car { min-width: 126px; height: 48px; padding: 0 16px; border-radius: 7px; color: #fff; background: var(--brand); font-size: 12px; }
+.select-rental-car:hover { color: #fff; background: var(--brand-hover); }
+.gallery-button { background: rgb(7 14 26 / 74%); }
+.gallery-button:hover { background: var(--brand); }
+
+@media (hover: hover) and (pointer: fine) {
+  .rental-car-card:hover { transform: translateY(-5px); box-shadow: 0 18px 38px rgb(14 24 39 / 14%); }
+  .rental-car-card:hover .rental-card-copy h3 { color: var(--brand-hover); }
+  .rental-car-card:hover .select-rental-car { background: var(--brand-hover); }
+}
+
+.steps-section { padding: 94px 0; color: #fff; background: #0b1220; }
+.steps-shell { width: min(var(--shell-max), calc(100% - 48px)); margin: 0 auto; }
+.steps-shell > h2 { max-width: 700px; margin: 10px 0 44px; font-size: clamp(35px, 4vw, 52px); letter-spacing: -.035em; }
+.steps-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.steps-grid article { min-height: 250px; padding: 30px; border: 1px solid rgb(255 255 255 / 10%); border-radius: 15px; background: rgb(255 255 255 / 4%); }
+.steps-grid article > span { width: 50px; height: 50px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: var(--brand); font-size: 13px; font-weight: 900; }
+.steps-grid h3 { margin: 28px 0 10px; font-size: 21px; }
+.steps-grid p { margin: 0; color: #9ea9b9; line-height: 1.6; }
+
+.contact-section { background: #f5f6f7; }
+.contact-hero { padding: 78px 24px 18px; color: var(--ink); background: #f5f6f7; }
+.contact-hero h2 { margin: 0; font-size: clamp(35px, 4vw, 50px); letter-spacing: -.035em; }
+.contact-breadcrumb { display: none; }
+.contact-body { max-width: var(--shell-max); padding: 36px 0 94px; }
+.contact-card-grid { gap: 16px; }
+.contact-card { min-height: 255px; padding: 27px; border: 1px solid #e0e4e8; border-radius: 14px; box-shadow: 0 7px 22px rgb(14 24 39 / 5%); }
+.contact-icon { color: #fff; background: var(--brand); }
+.contact-form-panel { border-radius: 16px; background: #0b1220; box-shadow: 0 22px 50px rgb(14 24 39 / 13%); }
+.contact-form-heading h2 { color: #fff; }
+.contact-form-heading p { color: #a7b1c0; }
+.contact-form-fields label { color: #dce2ea; }
+.contact-form-fields input,
+.contact-form-fields textarea { border-color: rgb(255 255 255 / 16%); color: #fff; background: rgb(255 255 255 / 7%); }
+.contact-form-fields button { color: #fff; background: var(--brand); }
+
+.site-footer { background: #070d18; }
+.footer-brand { border-color: rgb(217 131 31 / 38%); background: #211600; }
+.footer-intro h2, .footer-columns h3 { color: #e6a34b; }
+.floating-whatsapp { box-shadow: 0 10px 28px rgb(3 12 24 / 28%); }
+.scroll-to-top { border: 1px solid #e3e5e8; }
+
+@media (max-width: 1180px) {
+  .hero-shell { grid-template-columns: minmax(0, 1.2fr) minmax(280px, .7fr); gap: 52px; }
+  .booking-shell, .rental-fleet-shell, .contact-body, .site-footer-shell { margin-left: 24px; margin-right: 24px; }
+  .booking-form {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "location location"
+      "pickup dropoff"
+      "search search";
+  }
+  .search-button { height: 60px; }
+  .rental-car-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 820px) {
+  .site-header { min-height: 76px; }
+  .brand-placeholder { width: 82px; height: 58px; }
+  .hero-shell { min-height: 0; padding: 64px 0 105px; grid-template-columns: 1fr; gap: 44px; }
+  .hero-copy { max-width: 100%; }
+  .hero-logo-card { width: min(100%, 360px); justify-self: start; transform: none; }
+  .booking-shell { margin-top: -48px; }
+  .fleet-heading { align-items: start; flex-direction: column; gap: 16px; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .steps-grid article { min-height: 0; }
+}
+
+@media (max-width: 650px) {
+  .site-header { padding: 7px 15px; }
+  .brand-placeholder { width: 76px; height: 56px; border-radius: 4px; }
+  .header-actions { gap: 8px; }
+  .language-button { padding: 8px; }
+  .hero-shell { width: calc(100% - 32px); padding: 54px 0 78px; }
+  .hero-copy h1 { font-size: clamp(42px, 14vw, 61px); }
+  .hero-copy > p { font-size: 17px; }
+  .hero-actions { display: grid; }
+  .hero-actions a { width: 100%; }
+  .hero-benefits { gap: 10px; }
+  .hero-benefits strong { font-size: 20px; }
+  .hero-benefits span { font-size: 10px; }
+  .hero-logo-card { width: 100%; }
+  .booking-section { padding-bottom: 10px; }
+  .booking-shell { margin: -30px 16px 0; padding: 18px; border-radius: 14px; }
+  .booking-form {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "location"
+      "pickup"
+      "dropoff"
+      "search";
+  }
+  .field-card { height: 78px; }
+  .rental-fleet-section { padding: 70px 0 78px; }
+  .rental-fleet-shell, .contact-body, .site-footer-shell { margin-left: 16px; margin-right: 16px; }
+  .rental-car-grid { grid-template-columns: 1fr; }
+  .rental-card-footer { grid-template-columns: 1fr; align-items: stretch; }
+  .select-rental-car { width: 100%; }
+  .steps-section { padding: 72px 0; }
+  .steps-shell { width: calc(100% - 32px); }
+  .contact-hero { padding: 62px 16px 10px; }
+  .contact-card { min-height: 0; }
+  .contact-form-panel { padding: 25px 20px; }
+}

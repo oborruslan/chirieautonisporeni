@@ -6,7 +6,7 @@ let currentLanguage = ['ro', 'ru', 'en'].includes(localStorage.getItem('site-lan
 
 const COPY = {
   ro: {
-    pageTitle: 'Rezervare auto', navRental: 'Închirieri auto', fleet: 'Flota noastră', rates: 'Tarife', contact: 'Contact', myBooking: 'Rezervarea mea',
+    pageTitle: 'Elita Auto Rent | Închirieri auto Nisporeni', navRental: 'Închirieri auto', fleet: 'Flota noastră', rates: 'Tarife', contact: 'Contact', myBooking: 'Rezervarea mea',
     booking: 'Rezervare', dailyRates: 'Tarife pe zi', information: 'Informații', rentalTerms: 'Condiții de închiriere', aboutUs: 'Despre noi', termsConditions: 'Termeni și condiții', help: 'Ajutor', moldova: 'Republica Moldova',
     small: 'Mic', medium: 'Mediu', large: 'Mare', passengerTransport: 'Transport persoane', utility: 'Utilitare',
     differentLocation: 'Voi livra în altă locație', pickupWhere: 'De unde vei ridica?', dropoffWhere: 'Unde vei livra?', dropoffPlaceholder: 'Introdu locația de predare ...', pickupWhen: 'Când vei primi?', dropoffWhen: 'Când vei livra?', searchCar: 'Găsesc o mașină', findCarLink: 'Caută o mașină',
@@ -26,7 +26,7 @@ const COPY = {
     resultsLocal: 'Datele au fost validate local. Conectarea la serviciu va fi adăugată ulterior.', requiredField: 'Completați câmpul {field}.', emailRequired: 'Introduceți adresa de e-mail.', emailInvalid: 'Introduceți o adresă de e-mail validă.', passwordShort: 'Parola trebuie să conțină minimum 8 caractere.', resetLater: 'Fluxul de resetare a parolei va fi conectat ulterior.'
   },
   ru: {
-    pageTitle: 'Аренда автомобиля', navRental: 'Аренда авто', fleet: 'Наш автопарк', rates: 'Тарифы', contact: 'Контакты', myBooking: 'Моя бронь',
+    pageTitle: 'Elita Auto Rent | Аренда авто в Ниспоренах', navRental: 'Аренда авто', fleet: 'Наш автопарк', rates: 'Тарифы', contact: 'Контакты', myBooking: 'Моя бронь',
     booking: 'Бронирование', dailyRates: 'Цены за день', information: 'Информация', rentalTerms: 'Условия аренды', aboutUs: 'О нас', termsConditions: 'Условия аренды', help: 'Помощь', moldova: 'Республика Молдова',
     small: 'Малый', medium: 'Средний', large: 'Большой', passengerTransport: 'Пассажирский транспорт', utility: 'Коммерческие',
     differentLocation: 'Вернуть в другом месте', pickupWhere: 'Где вы заберёте?', dropoffWhere: 'Где вы вернёте?', dropoffPlaceholder: 'Укажите место возврата ...', pickupWhen: 'Когда заберёте?', dropoffWhen: 'Когда вернёте?', searchCar: 'Найти автомобиль', findCarLink: 'Найти автомобиль',
@@ -46,7 +46,7 @@ const COPY = {
     resultsLocal: 'Данные проверены локально. Подключение к сервису будет добавлено позже.', requiredField: 'Заполните поле «{field}».', emailRequired: 'Введите адрес электронной почты.', emailInvalid: 'Введите корректный адрес электронной почты.', passwordShort: 'Пароль должен содержать не менее 8 символов.', resetLater: 'Восстановление пароля будет подключено позже.'
   },
   en: {
-    pageTitle: 'Car rental booking', navRental: 'Car rental', fleet: 'Our fleet', rates: 'Rates', contact: 'Contact', myBooking: 'My booking',
+    pageTitle: 'Elita Auto Rent | Car rental in Nisporeni', navRental: 'Car rental', fleet: 'Our fleet', rates: 'Rates', contact: 'Contact', myBooking: 'My booking',
     booking: 'Booking', dailyRates: 'Daily rates', information: 'Information', rentalTerms: 'Rental terms', aboutUs: 'About us', termsConditions: 'Terms and conditions', help: 'Help', moldova: 'Republic of Moldova',
     small: 'Small', medium: 'Medium', large: 'Large', passengerTransport: 'Passenger vehicles', utility: 'Commercial vehicles',
     differentLocation: 'Return to another location', pickupWhere: 'Where will you pick up?', dropoffWhere: 'Where will you return?', dropoffPlaceholder: 'Enter the return location ...', pickupWhen: 'When will you pick up?', dropoffWhen: 'When will you return?', searchCar: 'Find a car', findCarLink: 'Find a car',
@@ -75,16 +75,7 @@ function t(key, replacements = {}) {
   return value;
 }
 
-const CAR_FLEET = [
-  { id: 'logan-zur484', model: 'Dacia Logan · ZUR 484', brand: 'Dacia', price: 500, transmission: 'manual', fuel: 'diesel', category: 'economic', description: 'descEconomic', passengers: 5, bags: 2, images: ['dacia-logan-zur484-2.jpg', 'dacia-logan-zur484-1.jpg'] },
-  { id: 'logan-mcv-dcc231', model: 'Dacia Logan MCV · DCC 231', brand: 'Dacia', price: 600, transmission: 'manual', fuel: 'diesel', category: 'estate', description: 'descEstate', passengers: 5, bags: 3, images: ['dacia-logan-mcv-dcc231-3.jpg', 'dacia-logan-mcv-dcc231-1.jpg', 'dacia-logan-mcv-dcc231-2.jpg'] },
-  { id: 'logan-mcv-gme817', model: 'Dacia Logan MCV · GME 817', brand: 'Dacia', price: 600, transmission: 'manual', fuel: 'diesel', category: 'estate', description: 'descEstate', passengers: 5, bags: 3, images: ['dacia-logan-mcv-gme817-2.jpg', 'dacia-logan-mcv-gme817-1.jpg', 'dacia-logan-mcv-gme817-3.jpg'] },
-  { id: 'captur-yhm731', model: 'Renault Captur · YHM 731', brand: 'Renault', price: 750, transmission: 'automatic', fuel: 'petrol', category: 'suv', description: 'descCitySuv', passengers: 5, bags: 2, images: ['renault-captur-yhm731-2.jpg', 'renault-captur-yhm731-1.jpg'] },
-  { id: 'auris-yhm745', model: 'Toyota Auris Touring Sports · YHM 745', brand: 'Toyota', price: 800, transmission: 'automatic', fuel: 'hybrid', category: 'estate', description: 'descHybridEstate', passengers: 5, bags: 3, images: ['toyota-auris-yhm745-3.jpg', 'toyota-auris-yhm745-1.jpg', 'toyota-auris-yhm745-2.jpg', 'toyota-auris-yhm745-4.jpg'] },
-  { id: 'jetta-hcn401', model: 'Volkswagen Jetta · HCN 401', brand: 'Volkswagen', price: 700, transmission: 'automatic', fuel: 'petrol', category: 'sedan', description: 'descSedan', passengers: 5, bags: 2, images: ['volkswagen-jetta-hcn401-3.jpg', 'volkswagen-jetta-hcn401-1.jpg', 'volkswagen-jetta-hcn401-2.jpg'] },
-  { id: 'jetta-yhm763', model: 'Volkswagen Jetta · YHM 763', brand: 'Volkswagen', price: 700, transmission: 'automatic', fuel: 'petrol', category: 'sedan', description: 'descSedan', passengers: 5, bags: 2, images: ['volkswagen-jetta-yhm763-3.jpg', 'volkswagen-jetta-yhm763-2.jpg', 'volkswagen-jetta-yhm763-1.jpg', 'volkswagen-jetta-yhm763-4.jpg'] },
-  { id: 'duster-msm756', model: 'Dacia Duster · MSM 756', brand: 'Dacia', price: 900, transmission: 'manual', fuel: 'diesel', category: 'suv', description: 'descFamilySuv', passengers: 5, bags: 3, images: ['dacia-duster-msm756-2.png', 'dacia-duster-msm756-1.png', 'dacia-duster-msm756-3.png'] }
-];
+const CAR_FLEET = window.ELITA_FLEET;
 
 const locations = [
   'Nisporeni, Republica Moldova'
@@ -902,7 +893,7 @@ function renderFleetCards() {
   grid.innerHTML = CAR_FLEET.map((car, index) => `
     <article class="rental-car-card" data-car-id="${car.id}" data-brand="${car.brand}" data-price="${car.price}" data-transmission="${car.transmission}" data-fuel="${car.fuel}" data-category="${car.category}" data-fleet-index="${index}">
       <div class="rental-card-copy">
-        <h3>${car.model}</h3>
+        <h3><a class="car-detail-link" href="car.html?id=${encodeURIComponent(car.id)}">${car.model}</a></h3>
         <p class="car-description"></p>
         <ul>
           <li data-spec="passengers"></li>
