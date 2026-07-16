@@ -84,3 +84,4 @@ CAPTCHA nu este încă integrată. Formularul de înregistrare păstrează punct
 - Efectul de zoom este dezactivat pe dispozitive tactile pentru a evita mișcări accidentale.
 - Pagina a fost verificată la 390 px fără derulare orizontală.
 - Butonul circular din dreapta-jos apare după derulare, indică progresul paginii și revine lin la început după clic.
+- Secțiunea FAQ conține cinci întrebări în Română, Rusă și Engleză; răspunsurile se deschid animat, câte unul odată, atât pe desktop, cât și pe mobil.

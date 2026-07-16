@@ -1,6 +1,6 @@
 const DETAIL_COPY = {
   ro: {
-    cars: 'Mașini', steps: 'Cum funcționează', about: 'Despre noi', contact: 'Contact', requestShort: 'Solicită', back: 'Înapoi la flotă',
+    cars: 'Mașini', steps: 'Cum funcționează', faq: 'Întrebări', about: 'Despre noi', contact: 'Contact', requestShort: 'Solicită', back: 'Înapoi la flotă',
     priceFrom: 'Preț de la', perDay: '/zi', requestCar: 'Solicită această mașină', requestNow: 'Solicită acum', call: 'Sună direct', included: 'Ce este inclus',
     insurance: 'Asigurare civilă inclusă', fuelPickup: 'Nivelul combustibilului notat la preluare', delivery: 'Predare în Nisporeni', support: 'Suport pentru rezervări 24/7', mileage: 'Condițiile kilometrilor se confirmă', inspection: 'Mașini verificate și întreținute',
     otherCars: 'Vezi și celelalte mașini', viewFleet: 'Vezi toată flota', footerText: 'Închirieri auto simple și rapide în Nisporeni.', company: 'Companie', clients: 'Clienți', terms: 'Termeni și condiții', contactPending: 'Telefonul și e-mailul se configurează înainte de publicare.',
@@ -8,7 +8,7 @@ const DETAIL_COPY = {
     whatsapp: 'Bună ziua! Doresc să rezerv {car}, de la {price} MDL/zi. Vă rog să-mi confirmați disponibilitatea.'
   },
   ru: {
-    cars: 'Автомобили', steps: 'Как это работает', about: 'О нас', contact: 'Контакты', requestShort: 'Запросить', back: 'Назад к автопарку',
+    cars: 'Автомобили', steps: 'Как это работает', faq: 'Вопросы', about: 'О нас', contact: 'Контакты', requestShort: 'Запросить', back: 'Назад к автопарку',
     priceFrom: 'Цена от', perDay: '/день', requestCar: 'Запросить этот автомобиль', requestNow: 'Запросить сейчас', call: 'Позвонить', included: 'Что включено',
     insurance: 'Страхование гражданской ответственности', fuelPickup: 'Уровень топлива фиксируется при выдаче', delivery: 'Выдача в Ниспоренах', support: 'Поддержка бронирования 24/7', mileage: 'Условия пробега подтверждаются', inspection: 'Проверенные и обслуженные автомобили',
     otherCars: 'Посмотрите другие автомобили', viewFleet: 'Весь автопарк', footerText: 'Простая и быстрая аренда авто в Ниспоренах.', company: 'Компания', clients: 'Клиентам', terms: 'Условия аренды', contactPending: 'Телефон и e-mail будут добавлены до публикации.',
@@ -16,7 +16,7 @@ const DETAIL_COPY = {
     whatsapp: 'Здравствуйте! Хочу забронировать {car} по цене от {price} MDL/день. Подтвердите, пожалуйста, наличие.'
   },
   en: {
-    cars: 'Cars', steps: 'How it works', about: 'About us', contact: 'Contact', requestShort: 'Request', back: 'Back to fleet',
+    cars: 'Cars', steps: 'How it works', faq: 'Questions', about: 'About us', contact: 'Contact', requestShort: 'Request', back: 'Back to fleet',
     priceFrom: 'Price from', perDay: '/day', requestCar: 'Request this car', requestNow: 'Request now', call: 'Call directly', included: 'What is included',
     insurance: 'Civil liability insurance included', fuelPickup: 'Fuel level recorded at pickup', delivery: 'Pickup in Nisporeni', support: 'Booking support 24/7', mileage: 'Mileage terms confirmed at booking', inspection: 'Inspected and maintained cars',
     otherCars: 'See our other cars', viewFleet: 'View the full fleet', footerText: 'Simple and quick car rental in Nisporeni.', company: 'Company', clients: 'Clients', terms: 'Terms and conditions', contactPending: 'Phone and e-mail will be configured before publication.',

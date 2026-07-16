@@ -67,6 +67,45 @@ const COPY = {
   }
 };
 
+const FAQ_CONTENT = {
+  ro: {
+    nav: 'Întrebări',
+    title: 'Întrebări frecvente',
+    intro: 'Răspunsuri simple la cele mai importante întrebări despre închirierea unei mașini.',
+    items: [
+      ['Ce documente sunt necesare pentru a închiria un autoturism?', 'Ai nevoie de un permis de conducere valabil și de un act de identitate. Vârsta minimă, experiența necesară și șoferii suplimentari se confirmă înainte de rezervare.'],
+      ['Cu cât timp în avans trebuie să rezerv un autoturism?', 'Recomandăm rezervarea cu cel puțin 24 de ore înainte. Cererile pentru aceeași zi sunt posibile în funcție de disponibilitatea mașinii.'],
+      ['Ce este inclus în prețul de închiriere?', 'Tariful final și serviciile incluse sunt confirmate înainte de rezervare și apar în contract. Garanția, kilometrajul, combustibilul și opțiunile suplimentare sunt comunicate clar în avans.'],
+      ['Pot extinde perioada de închiriere?', 'Da, dacă mașina rămâne disponibilă. Contactează-ne cât mai devreme, preferabil cu minimum 24 de ore înainte de data returnării.'],
+      ['Este disponibil serviciul de livrare la adresă?', 'Predarea și ridicarea în Nisporeni se stabilesc la confirmarea rezervării. Pentru alte localități, disponibilitatea și eventualul cost se confirmă separat.']
+    ]
+  },
+  ru: {
+    nav: 'Вопросы',
+    title: 'Частые вопросы',
+    intro: 'Простые ответы на основные вопросы об аренде автомобиля.',
+    items: [
+      ['Какие документы нужны для аренды автомобиля?', 'Нужны действующее водительское удостоверение и документ, удостоверяющий личность. Минимальный возраст, необходимый стаж и дополнительные водители подтверждаются до бронирования.'],
+      ['Насколько заранее нужно бронировать автомобиль?', 'Рекомендуем бронировать минимум за 24 часа. Запросы на тот же день возможны при наличии свободного автомобиля.'],
+      ['Что входит в стоимость аренды?', 'Итоговый тариф и включённые услуги подтверждаются до бронирования и указываются в договоре. Депозит, пробег, топливо и дополнительные опции сообщаются заранее.'],
+      ['Можно ли продлить срок аренды?', 'Да, если автомобиль остаётся доступным. Свяжитесь с нами как можно раньше, желательно минимум за 24 часа до возврата.'],
+      ['Доступна ли доставка автомобиля по адресу?', 'Выдача и возврат в Ниспоренах согласовываются при подтверждении бронирования. Для других населённых пунктов условия и возможная стоимость уточняются отдельно.']
+    ]
+  },
+  en: {
+    nav: 'Questions',
+    title: 'Frequently asked questions',
+    intro: 'Straightforward answers to the main questions about renting a car.',
+    items: [
+      ['What documents are required to rent a car?', 'You need a valid driving licence and an identity document. Minimum age, required driving experience and additional drivers are confirmed before booking.'],
+      ['How far in advance should I book a car?', 'We recommend booking at least 24 hours in advance. Same-day requests are possible depending on vehicle availability.'],
+      ['What is included in the rental price?', 'The final rate and included services are confirmed before booking and listed in the agreement. Deposit, mileage, fuel and optional extras are communicated clearly in advance.'],
+      ['Can I extend the rental period?', 'Yes, if the car remains available. Contact us as early as possible, preferably at least 24 hours before the return date.'],
+      ['Is delivery to an address available?', 'Pickup and return in Nisporeni are agreed when the booking is confirmed. Availability and any cost for other locations are confirmed separately.']
+    ]
+  }
+};
+
 function t(key, replacements = {}) {
   let value = COPY[currentLanguage]?.[key] ?? COPY.ro[key] ?? key;
   for (const [name, replacement] of Object.entries(replacements)) {
@@ -175,6 +214,7 @@ function applyLanguage(language) {
     option.setAttribute('aria-current', String(option.dataset.language === currentLanguage));
   }
   applyStaticTranslations();
+  renderFaq();
   localizeFleetCards();
   if (typeof applyFleetFilters === 'function') applyFleetFilters();
   if (!imageLightbox.hidden) localizeLightbox();
@@ -182,6 +222,25 @@ function applyLanguage(language) {
     calendarTimeLabel.textContent = activeDateType === 'dropoff' ? t('dropoffTimeQuestion') : t('pickupTimeQuestion');
     renderCalendars();
   }
+}
+
+function renderFaq() {
+  const content = FAQ_CONTENT[currentLanguage];
+  document.querySelector('#faq-title').textContent = content.title;
+  document.querySelector('.faq-heading > p').textContent = content.intro;
+  document.querySelectorAll('.site-header a[href$="#faq"]').forEach((link) => { link.textContent = content.nav; });
+  document.querySelector('#faq-list').innerHTML = content.items.map(([question, answer], index) => `
+    <article class="faq-item">
+      <h3>
+        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-${index}">
+          <span>${question}</span><span class="faq-chevron" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div id="faq-answer-${index}" class="faq-answer" role="region" aria-hidden="true">
+        <div><p>${answer}</p></div>
+      </div>
+    </article>
+  `).join('');
 }
 
 languageButton.addEventListener('click', () => {
@@ -1279,6 +1338,36 @@ mobileFilterToggle.addEventListener('click', () => {
   mobileFilterToggle.setAttribute('aria-expanded', String(isOpen));
   if (isOpen) fleetFilters.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
+
+const faqList = document.querySelector('#faq-list');
+faqList.addEventListener('click', (event) => {
+  const button = event.target.closest('.faq-question');
+  if (!button) return;
+  const selectedItem = button.closest('.faq-item');
+  const shouldOpen = !selectedItem.classList.contains('is-open');
+  faqList.querySelectorAll('.faq-item').forEach((item) => {
+    item.classList.remove('is-open');
+    item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    item.querySelector('.faq-answer').setAttribute('aria-hidden', 'true');
+  });
+  if (shouldOpen) {
+    selectedItem.classList.add('is-open');
+    button.setAttribute('aria-expanded', 'true');
+    selectedItem.querySelector('.faq-answer').setAttribute('aria-hidden', 'false');
+  }
+});
+
+const faqSection = document.querySelector('#faq');
+if ('IntersectionObserver' in window) {
+  const faqObserver = new IntersectionObserver((entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    faqSection.classList.add('is-visible');
+    faqObserver.disconnect();
+  }, { threshold: .16 });
+  faqObserver.observe(faqSection);
+} else {
+  faqSection.classList.add('is-visible');
+}
 
 applyFleetFilters();
 applyLanguage(currentLanguage);
