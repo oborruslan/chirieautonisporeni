@@ -1,0 +1,12 @@
+(function exposeFleetData(global) {
+  global.ELITA_FLEET = [
+    { id: 'logan-zur484', model: 'Dacia Logan · ZUR 484', brand: 'Dacia', price: 500, transmission: 'manual', fuel: 'diesel', category: 'economic', description: 'descEconomic', passengers: 5, bags: 2, images: ['dacia-logan-zur484-2.jpg', 'dacia-logan-zur484-1.jpg'] },
+    { id: 'logan-mcv-dcc231', model: 'Dacia Logan MCV · DCC 231', brand: 'Dacia', price: 600, transmission: 'manual', fuel: 'diesel', category: 'estate', description: 'descEstate', passengers: 5, bags: 3, images: ['dacia-logan-mcv-dcc231-3.jpg', 'dacia-logan-mcv-dcc231-1.jpg', 'dacia-logan-mcv-dcc231-2.jpg'] },
+    { id: 'logan-mcv-gme817', model: 'Dacia Logan MCV · GME 817', brand: 'Dacia', price: 600, transmission: 'manual', fuel: 'diesel', category: 'estate', description: 'descEstate', passengers: 5, bags: 3, images: ['dacia-logan-mcv-gme817-2.jpg', 'dacia-logan-mcv-gme817-1.jpg', 'dacia-logan-mcv-gme817-3.jpg'] },
+    { id: 'captur-yhm731', model: 'Renault Captur · YHM 731', brand: 'Renault', price: 750, transmission: 'automatic', fuel: 'petrol', category: 'suv', description: 'descCitySuv', passengers: 5, bags: 2, images: ['renault-captur-yhm731-2.jpg', 'renault-captur-yhm731-1.jpg'] },
+    { id: 'auris-yhm745', model: 'Toyota Auris Touring Sports · YHM 745', brand: 'Toyota', price: 800, transmission: 'automatic', fuel: 'hybrid', category: 'estate', description: 'descHybridEstate', passengers: 5, bags: 3, images: ['toyota-auris-yhm745-3.jpg', 'toyota-auris-yhm745-1.jpg', 'toyota-auris-yhm745-2.jpg', 'toyota-auris-yhm745-4.jpg'] },
+    { id: 'jetta-hcn401', model: 'Volkswagen Jetta · HCN 401', brand: 'Volkswagen', price: 700, transmission: 'automatic', fuel: 'petrol', category: 'sedan', description: 'descSedan', passengers: 5, bags: 2, images: ['volkswagen-jetta-hcn401-3.jpg', 'volkswagen-jetta-hcn401-1.jpg', 'volkswagen-jetta-hcn401-2.jpg'] },
+    { id: 'jetta-yhm763', model: 'Volkswagen Jetta · YHM 763', brand: 'Volkswagen', price: 700, transmission: 'automatic', fuel: 'petrol', category: 'sedan', description: 'descSedan', passengers: 5, bags: 2, images: ['volkswagen-jetta-yhm763-3.jpg', 'volkswagen-jetta-yhm763-2.jpg', 'volkswagen-jetta-yhm763-1.jpg', 'volkswagen-jetta-yhm763-4.jpg'] },
+    { id: 'duster-msm756', model: 'Dacia Duster · MSM 756', brand: 'Dacia', price: 900, transmission: 'manual', fuel: 'diesel', category: 'suv', description: 'descFamilySuv', passengers: 5, bags: 3, images: ['dacia-duster-msm756-2.png', 'dacia-duster-msm756-1.png', 'dacia-duster-msm756-3.png'] }
+  ];
+})(window);

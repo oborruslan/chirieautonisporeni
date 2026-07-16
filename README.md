@@ -9,7 +9,8 @@ Deschide `index.html` într-un browser. Pagina nu necesită instalare sau server
 - Flota de 8 mașini din arhiva furnizată este afișată direct pe pagina principală, cu prețuri zilnice în MDL.
 - Tariful lunar apare numai ca opțiune „la cerere”, fiindcă activitatea principală este închirierea pe una sau mai multe zile.
 - Logoul „Elita Auto Rent” este integrat în antet și footer din `assets/brand/elita-auto-rent-logo.jpg`.
-- Paleta paginii folosește auriu, crem și maro închis pentru a se potrivi cu identitatea vizuală a logoului.
+- Pagina principală folosește un stil simplu, cu fundal bleumarin închis, accente aurii, carduri curate și formular compact de rezervare.
+- Logoul furnizat este afișat atât în antet, cât și ca element principal în secțiunea de prezentare.
 
 ## Pagini informative
 
@@ -49,6 +50,9 @@ Deschide `index.html` într-un browser. Pagina nu necesită instalare sau server
 - Clicul sau atingerea fotografiei deschide imaginea originală într-un vizualizator mare, fără decupare.
 - Vizualizatorul oferă potrivire pe ecran, zoom, afișare 1:1, miniaturi, săgeți, glisare pe mobil și navigare din tastatură.
 - Prima fotografie a fiecărei mașini este încărcată imediat; restul sunt încărcate când utilizatorul navighează prin galerie.
+- Numele fiecărei mașini deschide pagina dedicată `car.html`, cu galerie mare, miniaturi, săgeți, glisare și vizualizare pe tot ecranul.
+- Pagina mașinii păstrează aceeași experiență pe desktop și mobil; pe telefon are bara fixă „Sună direct / Solicită această mașină”.
+- Titlul, specificațiile, prețul, galeria, miniaturile și secțiunile apar progresiv prin animații, cu o variantă fără mișcare pentru utilizatorii care au activată preferința sistemului.
 
 ## Limbi
 
@@ -59,10 +63,14 @@ Deschide `index.html` într-un browser. Pagina nu necesită instalare sau server
 ## Fișiere
 
 - `index.html` — structura paginii, flota și footer-ul.
+- `car.html` — pagina dinamică de detaliu pentru fiecare mașină.
 - `about.html` — pagina separată „Despre noi”.
 - `terms.html` — pagina separată „Termeni și condiții”.
 - `styles.css` — stilurile responsive.
+- `car-detail.css` — galeria, pagina mașinii, animațiile și bara mobilă de acțiuni.
 - `app.js` — calendar, rezervare, WhatsApp, autentificare și interacțiuni.
+- `car-detail.js` — galerie desktop/mobil, fullscreen, swipe, traduceri și rezervarea paginii mașinii.
+- `fleet-data.js` — datele comune ale celor 8 mașini și listele de fotografii.
 - `content-pages.js` — traduceri și interacțiuni pentru paginile informative.
 
 CAPTCHA nu este încă integrată. Formularul de înregistrare păstrează punctul `#captcha-slot` pentru integrarea ulterioară.

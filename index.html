@@ -3,25 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Interfață demonstrativă pentru rezervarea unei mașini.">
-  <title>Rezervare auto</title>
+  <meta name="description" content="Elita Auto Rent — închirieri auto simple și rapide în Nisporeni, Republica Moldova.">
+  <meta name="theme-color" content="#0b1220">
+  <title>Elita Auto Rent | Închirieri auto Nisporeni</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header" aria-label="Antet demonstrativ">
+  <header class="site-header" aria-label="Antet principal">
     <a class="brand-placeholder" href="index.html" aria-label="Elita Auto Rent — Acasă"><img class="brand-logo" src="assets/brand/elita-auto-rent-logo.jpg" alt="Elita Auto Rent"></a>
     <nav class="desktop-nav" aria-label="Navigație principală">
-      <a href="index.html#booking-title">Închirieri auto</a>
-      <a href="index.html#fleet">Flota noastră</a>
+      <a href="index.html#fleet">Mașini</a>
+      <a href="index.html#how-it-works">Cum funcționează</a>
       <a href="about.html">Despre noi</a>
-      <a href="terms.html">Termeni și condiții</a>
       <a href="index.html#contact">Contact</a>
     </nav>
     <div class="header-actions">
       <button id="mobile-nav-toggle" class="mobile-nav-toggle" type="button" aria-label="Deschide meniul" aria-expanded="false" aria-controls="mobile-nav-panel">
         <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
-      <a class="account-link" href="#">Rezervarea mea</a>
+      <a class="account-link" href="#booking-title">Rezervă acum</a>
       <button id="open-login" class="header-icon-link" type="button" aria-label="Autentificare în cont">
         <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 21v-2a5 5 0 0 0-5-5H9a5 5 0 0 0-5 5v2M12 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/></svg>
       </button>
@@ -39,10 +39,9 @@
       </div>
     </div>
     <nav id="mobile-nav-panel" class="mobile-nav-panel" aria-label="Navigație mobilă" hidden>
-      <a href="index.html#booking-title">Închirieri auto</a>
-      <a href="index.html#fleet">Flota noastră</a>
+      <a href="index.html#fleet">Mașini</a>
+      <a href="index.html#how-it-works">Cum funcționează</a>
       <a href="about.html">Despre noi</a>
-      <a href="terms.html">Termeni și condiții</a>
       <a href="index.html#contact">Contact</a>
     </nav>
   </header>
@@ -100,6 +99,29 @@
   </section>
 
   <main>
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-shell">
+        <div class="hero-copy">
+          <span class="hero-eyebrow">Elita Auto Rent · Nisporeni</span>
+          <h1 id="hero-title">Închiriază simplu.<br>Condu fără griji.</h1>
+          <p>Mașini curate, prețuri clare și rezervare rapidă direct prin WhatsApp.</p>
+          <div class="hero-actions">
+            <a class="hero-primary" href="#fleet">Vezi mașinile</a>
+            <a class="hero-secondary" href="#booking-title">Rezervă acum</a>
+          </div>
+          <ul class="hero-benefits" aria-label="Avantaje">
+            <li><strong>8</strong><span>mașini disponibile</span></li>
+            <li><strong>24/7</strong><span>rezervări online</span></li>
+            <li><strong>500</strong><span>MDL/zi de la</span></li>
+          </ul>
+        </div>
+        <div class="hero-logo-card">
+          <span class="hero-logo-glow" aria-hidden="true"></span>
+          <img src="assets/brand/elita-auto-rent-logo.jpg" alt="Elita Auto Rent — Quality in Service">
+        </div>
+      </div>
+    </section>
+
     <section class="booking-section" aria-labelledby="booking-title">
       <div class="booking-shell">
         <h1 id="booking-title" class="sr-only">Caută o mașină de închiriat</h1>
@@ -268,6 +290,18 @@
             <div id="tarife" class="rental-car-grid"></div>
             <div id="fleet-empty" class="fleet-empty" hidden>Nu există mașini pentru filtrele selectate.</div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="steps-section" aria-labelledby="steps-title">
+      <div class="steps-shell">
+        <span class="section-eyebrow">Simplu și rapid</span>
+        <h2 id="steps-title">Cum închiriezi o mașină?</h2>
+        <div class="steps-grid">
+          <article><span>01</span><h3>Alege mașina</h3><p>Vezi fotografiile și găsește modelul potrivit pentru drumul tău.</p></article>
+          <article><span>02</span><h3>Selectează perioada</h3><p>Completează data ridicării și data returnării în formularul de rezervare.</p></article>
+          <article><span>03</span><h3>Confirmă pe WhatsApp</h3><p>Trimite cererea, iar noi confirmăm rapid disponibilitatea și prețul.</p></article>
         </div>
       </div>
     </section>
@@ -517,6 +551,7 @@
     </section>
   </div>
 
+  <script src="fleet-data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
