@@ -1233,11 +1233,9 @@ fillCalendarTimeOptions();
 
 for (const button of document.querySelectorAll('.select-rental-car')) {
   button.addEventListener('click', () => {
-    selectedVehicle = button.dataset.vehicle;
-    document.querySelector('#result-toast strong').textContent = t('selectedCar');
-    document.querySelector('#result-summary').textContent = t('completeBooking', { car: selectedVehicle });
-    toast.hidden = false;
-    document.querySelector('.booking-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const card = button.closest('.rental-car-card');
+    if (!card?.dataset.carId) return;
+    window.location.href = `car.html?id=${encodeURIComponent(card.dataset.carId)}`;
   });
 }
 
