@@ -1407,6 +1407,17 @@ body { color: var(--ink); background: #f5f6f7; }
 html, body { background: #fffdf9; }
 body { color: var(--ink); }
 
+.inline-phone-icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .site-header {
   color: var(--ink);
   background: rgb(255 255 255 / 97%);
