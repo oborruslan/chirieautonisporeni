@@ -1010,8 +1010,8 @@ function updateHeroCarMotion() {
   const motionDistance = Math.min(300, Math.max(220, window.innerHeight * .34));
   const progress = Math.min(1, currentScrollY / motionDistance);
   const delta = currentScrollY - previousHeroScrollY;
-  const travelX = 50 - progress * 112;
-  const wheelAngle = -progress * 1080;
+  const travelX = 50 - progress * 162;
+  const wheelAngle = -progress * 1440;
   const wheelOpacity = Math.min(.96, Math.max(0, (progress - .035) * 4.5));
 
   heroCarVisual.style.setProperty('--hero-car-x', `${travelX.toFixed(2)}%`);

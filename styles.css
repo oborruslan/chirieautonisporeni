@@ -1599,18 +1599,32 @@ body { color: var(--ink); }
     z-index: 0;
     top: 45%;
     left: 87%;
-    width: 34%;
-    height: 30%;
+    width: 42%;
+    height: 25%;
     display: block;
     opacity: var(--hero-speed-opacity, 0);
-    background:
-      linear-gradient(180deg, transparent 8%, rgb(237 127 11 / 58%) 10% 16%, transparent 18% 42%, rgb(15 35 65 / 42%) 44% 49%, transparent 51% 72%, rgb(237 127 11 / 38%) 74% 78%, transparent 80%),
-      linear-gradient(90deg, rgb(237 127 11 / 45%), transparent 82%);
-    clip-path: polygon(0 14%, 100% 0, 82% 22%, 100% 47%, 76% 58%, 100% 88%, 0 74%);
-    filter: blur(.35px);
     transform: translateY(-50%);
     transform-origin: center;
     transition: opacity .12s linear;
+    overflow: visible;
+  }
+
+  .hero-car-speed-lines path {
+    fill: none;
+    stroke: rgb(237 127 11 / 62%);
+    stroke-width: 2.1;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .hero-car-speed-lines path:nth-child(2) {
+    stroke: rgb(18 38 66 / 48%);
+    stroke-width: 1.65;
+  }
+
+  .hero-car-speed-lines path:nth-child(3) {
+    stroke: rgb(237 127 11 / 42%);
+    stroke-width: 1.4;
   }
 
   .hero-car-visual.is-reversing .hero-car-speed-lines {
@@ -1634,8 +1648,8 @@ body { color: var(--ink); }
     will-change: transform;
   }
 
-  .hero-car-wheel-front { top: 69%; left: 50.5%; width: 18%; }
-  .hero-car-wheel-rear { top: 68%; left: 92%; width: 14.5%; }
+  .hero-car-wheel-front { top: 67.56%; left: 50.72%; width: 17.17%; }
+  .hero-car-wheel-rear { top: 63.96%; left: 91.81%; width: 12.85%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
