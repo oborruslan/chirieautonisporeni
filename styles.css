@@ -1579,7 +1579,11 @@ body { color: var(--ink); }
 
 @media (max-width: 650px) {
   .hero-shell { gap: 20px; padding-bottom: 34px; }
-  .hero-car-visual { width: calc(100% + 22px); margin: 0 -11px; }
+  .hero-car-visual {
+    width: calc(100% + 22px);
+    margin: 0 -11px;
+    transform: translateX(50%);
+  }
   .hero-car-glow { width: 94%; height: 94%; }
   .hero-car-visual::after { left: 10%; right: 6%; bottom: 1%; }
 }
