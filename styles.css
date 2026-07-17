@@ -1555,12 +1555,17 @@ body { color: var(--ink); }
 }
 
 .hero-car-visual img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: auto;
   display: block;
   filter: drop-shadow(0 20px 24px rgb(35 45 62 / 13%));
   animation: hero-car-float 5.5s ease-in-out infinite;
 }
+
+.hero-car-speed-lines,
+.hero-car-wheel { display: none; }
 
 @keyframes hero-car-float {
   0%, 100% { transform: translateY(0) rotate(-.35deg); }
@@ -1582,12 +1587,59 @@ body { color: var(--ink); }
   .hero-car-visual {
     width: calc(100% + 22px);
     margin: 0 -11px;
-    transform: translateX(50%);
+    transform: translate3d(var(--hero-car-x, 50%), var(--hero-car-lift, 0px), 0);
+    will-change: transform;
   }
+  .hero-car-visual img { animation: none; }
   .hero-car-glow { width: 94%; height: 94%; }
   .hero-car-visual::after { left: 10%; right: 6%; bottom: 1%; }
+
+  .hero-car-speed-lines {
+    position: absolute;
+    z-index: 0;
+    top: 45%;
+    left: 87%;
+    width: 34%;
+    height: 30%;
+    display: block;
+    opacity: var(--hero-speed-opacity, 0);
+    background:
+      linear-gradient(180deg, transparent 8%, rgb(237 127 11 / 58%) 10% 16%, transparent 18% 42%, rgb(15 35 65 / 42%) 44% 49%, transparent 51% 72%, rgb(237 127 11 / 38%) 74% 78%, transparent 80%),
+      linear-gradient(90deg, rgb(237 127 11 / 45%), transparent 82%);
+    clip-path: polygon(0 14%, 100% 0, 82% 22%, 100% 47%, 76% 58%, 100% 88%, 0 74%);
+    filter: blur(.35px);
+    transform: translateY(-50%);
+    transform-origin: center;
+    transition: opacity .12s linear;
+  }
+
+  .hero-car-visual.is-reversing .hero-car-speed-lines {
+    right: 88%;
+    left: auto;
+    transform: translateY(-50%) scaleX(-1);
+  }
+
+  .hero-car-wheel {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    opacity: var(--hero-wheel-opacity, 0);
+    background: repeating-conic-gradient(from 7deg, #f6c357 0 9deg, #122642 10deg 21deg, transparent 22deg 45deg);
+    -webkit-mask: radial-gradient(circle, transparent 0 43%, #000 46% 61%, transparent 64%);
+    mask: radial-gradient(circle, transparent 0 43%, #000 46% 61%, transparent 64%);
+    transform: translate(-50%, -50%) rotate(var(--hero-wheel-angle, 0deg));
+    transition: opacity .1s linear;
+    will-change: transform;
+  }
+
+  .hero-car-wheel-front { top: 69%; left: 50.5%; width: 18%; }
+  .hero-car-wheel-rear { top: 68%; left: 92%; width: 14.5%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-car-visual img { animation: none !important; }
+  .hero-car-speed-lines,
+  .hero-car-wheel { display: none !important; }
 }
