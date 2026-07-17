@@ -988,7 +988,7 @@ let heroSpeedFadeTimer = 0;
 
 function resetHeroCarMotion() {
   if (!heroCarVisual) return;
-  heroCarVisual.classList.remove('is-reversing');
+  heroCarVisual.classList.remove('is-reversing', 'is-exited');
   heroCarVisual.style.removeProperty('--hero-car-x');
   heroCarVisual.style.removeProperty('--hero-car-lift');
   heroCarVisual.style.removeProperty('--hero-wheel-angle');
@@ -1007,31 +1007,36 @@ function updateHeroCarMotion() {
     return;
   }
 
-  const motionDistance = Math.min(300, Math.max(220, window.innerHeight * .34));
+  const motionDistance = Math.min(380, Math.max(300, window.innerHeight * .42));
   const progress = Math.min(1, currentScrollY / motionDistance);
   const delta = currentScrollY - previousHeroScrollY;
   const travelX = 50 - progress * 162;
   const wheelAngle = -progress * 1440;
   const wheelOpacity = Math.min(.96, Math.max(0, (progress - .035) * 4.5));
+  const speedLineVisibility = Math.min(1, Math.max(0, (.94 - progress) / .16));
 
   heroCarVisual.style.setProperty('--hero-car-x', `${travelX.toFixed(2)}%`);
   heroCarVisual.style.setProperty('--hero-car-lift', `${(-Math.sin(progress * Math.PI) * 2).toFixed(2)}px`);
   heroCarVisual.style.setProperty('--hero-wheel-angle', `${wheelAngle.toFixed(1)}deg`);
   heroCarVisual.style.setProperty('--hero-wheel-opacity', wheelOpacity.toFixed(2));
+  heroCarVisual.classList.toggle('is-exited', progress >= .94);
 
   if (Math.abs(delta) > .5) {
     heroCarVisual.classList.toggle('is-reversing', delta < 0 && progress > 0);
-    heroCarVisual.style.setProperty('--hero-speed-opacity', String(Math.min(.72, .26 + Math.abs(delta) / 34)));
+    const speedOpacity = Math.min(.72, .26 + Math.abs(delta) / 34) * speedLineVisibility;
+    heroCarVisual.style.setProperty('--hero-speed-opacity', speedOpacity.toFixed(3));
     window.clearTimeout(heroSpeedFadeTimer);
-    heroSpeedFadeTimer = window.setTimeout(() => {
-      heroCarVisual.style.setProperty('--hero-speed-opacity', '0');
-    }, 115);
+    if (speedOpacity > 0) {
+      heroSpeedFadeTimer = window.setTimeout(() => {
+        heroCarVisual.style.setProperty('--hero-speed-opacity', '0');
+      }, 115);
+    }
   }
 
-  if (progress === 0) {
+  if (progress === 0 || progress >= .94) {
     window.clearTimeout(heroSpeedFadeTimer);
     heroCarVisual.style.setProperty('--hero-speed-opacity', '0');
-    heroCarVisual.classList.remove('is-reversing');
+    if (progress === 0) heroCarVisual.classList.remove('is-reversing');
   }
   previousHeroScrollY = currentScrollY;
 }

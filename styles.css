@@ -1633,9 +1633,14 @@ body { color: var(--ink); }
     transform: translateY(-50%) scaleX(-1);
   }
 
+  .hero-car-visual.is-exited .hero-car-speed-lines {
+    opacity: 0 !important;
+    transition: none;
+  }
+
   .hero-car-wheel {
     position: absolute;
-    z-index: 2;
+    z-index: 0;
     display: block;
     aspect-ratio: 1;
     border-radius: 50%;
@@ -1648,8 +1653,8 @@ body { color: var(--ink); }
     will-change: transform;
   }
 
-  .hero-car-wheel-front { top: 67.56%; left: 50.72%; width: 17.17%; }
-  .hero-car-wheel-rear { top: 63.96%; left: 91.81%; width: 12.85%; }
+  .hero-car-wheel-front { top: 67.56%; left: 50.72%; width: 15.3%; }
+  .hero-car-wheel-rear { top: 63.96%; left: 91.81%; width: 11.4%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
