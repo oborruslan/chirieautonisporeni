@@ -1642,19 +1642,26 @@ body { color: var(--ink); }
     position: absolute;
     z-index: 0;
     display: block;
-    aspect-ratio: 1;
     border-radius: 50%;
+    overflow: hidden;
     opacity: var(--hero-wheel-opacity, 0);
-    background: repeating-conic-gradient(from 7deg, #f6c357 0 9deg, #122642 10deg 21deg, transparent 22deg 45deg);
-    -webkit-mask: radial-gradient(circle, transparent 0 43%, #000 46% 61%, transparent 64%);
-    mask: radial-gradient(circle, transparent 0 43%, #000 46% 61%, transparent 64%);
-    transform: translate(-50%, -50%) rotate(var(--hero-wheel-angle, 0deg));
+    transform: translate(-50%, -50%);
     transition: opacity .1s linear;
+  }
+
+  .hero-car-wheel::before {
+    content: "";
+    position: absolute;
+    inset: -24%;
+    background: repeating-conic-gradient(from 7deg, #f6c357 0 8deg, #122642 9deg 17deg, transparent 18deg 45deg);
+    -webkit-mask: radial-gradient(circle, transparent 0 27%, #000 31% 66%, transparent 70%);
+    mask: radial-gradient(circle, transparent 0 27%, #000 31% 66%, transparent 70%);
+    transform: rotate(var(--hero-wheel-angle, 0deg));
     will-change: transform;
   }
 
-  .hero-car-wheel-front { top: 67.56%; left: 50.72%; width: 15.3%; }
-  .hero-car-wheel-rear { top: 63.96%; left: 91.81%; width: 11.4%; }
+  .hero-car-wheel-front { top: 67.56%; left: 50.72%; width: 8%; height: 28%; }
+  .hero-car-wheel-rear { top: 63.96%; left: 91.81%; width: 4.7%; height: 22%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
